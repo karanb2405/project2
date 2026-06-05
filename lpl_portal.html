@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LPL Enterprise Data Foundation & AI-Ready Platform | Wipro</title>
+<style>
+  :root {
+    --blue-dark: #0a2342;
+    --blue-mid: #1a4a7a;
+    --blue-accent: #2d7dd2;
+    --blue-light: #e8f1fb;
+    --gray-dark: #2c3e50;
+    --gray-mid: #5a6a7e;
+    --gray-light: #f4f6f9;
+    --gray-border: #dde3ed;
+    --white: #ffffff;
+    --gold: #c9962a;
+    --green: #27ae60;
+    --red: #c0392b;
+    --orange: #e67e22;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--gray-light); color: var(--gray-dark); font-size: 14px; }
+
+  /* HEADER */
+  .header { background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-mid) 100%); color: white; padding: 28px 40px 20px; position: relative; border-bottom: 3px solid var(--gold); }
+  .header-top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .header h1 { font-size: 22px; font-weight: 700; letter-spacing: 0.3px; line-height: 1.3; }
+  .header h1 span { color: var(--gold); }
+  .header-sub { font-size: 12px; color: #a8c4e0; margin-top: 4px; letter-spacing: 0.5px; text-transform: uppercase; }
+  .wipro-badge { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); border-radius: 6px; padding: 8px 16px; text-align: right; font-size: 11px; color: #cce0f5; }
+  .wipro-badge strong { display: block; font-size: 15px; color: white; }
+  .positioning { background: rgba(201,150,42,0.15); border-left: 3px solid var(--gold); padding: 10px 16px; margin-top: 16px; font-size: 12.5px; color: #e8d5a0; font-style: italic; line-height: 1.5; }
+
+  /* TABS */
+  .tabs-bar { background: var(--blue-dark); display: flex; gap: 0; border-bottom: 2px solid var(--blue-accent); padding: 0 40px; position: sticky; top: 0; z-index: 100; }
+  .tab-btn { background: transparent; border: none; color: #8fb3d4; padding: 13px 20px; font-size: 13px; font-weight: 500; cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -2px; transition: all 0.2s; white-space: nowrap; }
+  .tab-btn:hover { color: white; background: rgba(255,255,255,0.05); }
+  .tab-btn.active { color: white; border-bottom-color: var(--gold); }
+
+  /* MAIN LAYOUT */
+  .main { max-width: 1400px; margin: 0 auto; padding: 24px 32px; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* EXEC SUMMARY */
+  .exec-headline { background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); color: white; border-radius: 10px; padding: 28px 32px; margin-bottom: 24px; border-left: 5px solid var(--gold); }
+  .exec-headline h2 { font-size: 17px; font-weight: 700; line-height: 1.5; color: #f0e8d0; }
+  .outcomes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+  .outcome-card { background: white; border-radius: 8px; padding: 20px; border-top: 3px solid var(--blue-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+  .outcome-card .icon { font-size: 22px; margin-bottom: 8px; }
+  .outcome-card h4 { font-size: 13px; font-weight: 700; color: var(--blue-dark); margin-bottom: 6px; }
+  .outcome-card p { font-size: 12px; color: var(--gray-mid); line-height: 1.5; }
+
+  .talk-track-box { background: #f0f4f9; border: 1px solid var(--gray-border); border-radius: 8px; padding: 20px 24px; margin-bottom: 24px; }
+  .talk-track-box h3 { font-size: 13px; font-weight: 700; color: var(--blue-mid); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .talk-track-box p { font-size: 13px; color: var(--gray-dark); line-height: 1.7; font-style: italic; }
+
+  /* ARCHITECTURE TAB */
+  .arch-layout { display: grid; grid-template-columns: 1fr 360px; gap: 20px; align-items: start; }
+  .arch-diagram { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  .arch-diagram h3 { font-size: 13px; font-weight: 700; color: var(--blue-dark); margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  .arch-layer { margin-bottom: 10px; border-radius: 8px; overflow: hidden; border: 1px solid var(--gray-border); }
+  .layer-header { padding: 9px 14px; font-size: 12px; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center; text-transform: uppercase; letter-spacing: 0.4px; transition: filter 0.2s; }
+  .layer-header:hover { filter: brightness(0.92); }
+  .layer-boxes { display: flex; flex-wrap: wrap; gap: 6px; padding: 10px 12px; background: rgba(255,255,255,0.6); }
+
+  .arch-box { background: white; border: 1px solid; border-radius: 5px; padding: 6px 10px; font-size: 11px; font-weight: 600; cursor: pointer; transition: all 0.18s; white-space: nowrap; }
+  .arch-box:hover { transform: translateY(-1px); box-shadow: 0 3px 8px rgba(0,0,0,0.15); }
+  .arch-box.selected { box-shadow: 0 0 0 2px var(--gold); }
+
+  /* Layer colors */
+  .l-ai .layer-header { background: #1a0533; color: #d4a8ff; }
+  .l-ai .arch-box { border-color: #7b2d8b; color: #5a0070; background: #f8f0ff; }
+  .l-govern .layer-header { background: #0d3b2e; color: #7dd4b0; }
+  .l-govern .arch-box { border-color: #1a8a5a; color: #0d5c38; background: #f0faf5; }
+  .l-consume .layer-header { background: #0a2342; color: #8ec5f5; }
+  .l-consume .arch-box { border-color: #2d7dd2; color: #0a3d6e; background: #eef6ff; }
+  .l-semantic .layer-header { background: #1a3a5c; color: #a8d4f5; }
+  .l-semantic .arch-box { border-color: #3a7abf; color: #1a3a5c; background: #f0f7ff; }
+  .l-product .layer-header { background: #c9962a; color: white; }
+  .l-product .arch-box { border-color: #c9962a; color: #7a5500; background: #fffbf0; }
+  .l-curated .layer-header { background: #2c3e50; color: #95afc0; }
+  .l-curated .arch-box { border-color: #5a6a7e; color: #2c3e50; background: #f4f6f9; }
+  .l-raw .layer-header { background: #4a3010; color: #d4a870; }
+  .l-raw .arch-box { border-color: #8a6030; color: #4a3010; background: #fdf8f0; }
+  .l-ingest .layer-header { background: #27ae60; color: white; }
+  .l-ingest .arch-box { border-color: #27ae60; color: #155e35; background: #f0faf5; }
+  .l-source .layer-header { background: #c0392b; color: white; }
+  .l-source .arch-box { border-color: #c0392b; color: #7a0000; background: #fff5f5; }
+
+  /* DETAIL PANEL */
+  .detail-panel { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); position: sticky; top: 60px; max-height: calc(100vh - 80px); overflow-y: auto; }
+  .detail-panel h3 { font-size: 14px; font-weight: 700; color: var(--blue-dark); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--blue-accent); }
+  .detail-section { margin-bottom: 14px; }
+  .detail-section h4 { font-size: 11px; font-weight: 700; color: var(--blue-accent); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .detail-section p, .detail-section li { font-size: 12px; color: var(--gray-dark); line-height: 1.6; }
+  .detail-section ul { padding-left: 16px; }
+  .detail-section li { margin-bottom: 3px; }
+  .wipro-tag { background: #e8f1fb; border-left: 3px solid var(--blue-accent); padding: 8px 10px; border-radius: 0 4px 4px 0; margin-top: 6px; }
+  .wipro-tag p, .wipro-tag li { color: var(--blue-mid); }
+  .placeholder-msg { color: var(--gray-mid); font-size: 13px; text-align: center; padding: 40px 20px; }
+  .placeholder-msg .icon { font-size: 32px; margin-bottom: 10px; }
+
+  /* ONBOARDING FACTORY */
+  .steps-row { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; margin-bottom: 24px; }
+  .step-card { background: white; border-radius: 8px; padding: 14px 10px; text-align: center; border-top: 3px solid var(--blue-accent); box-shadow: 0 2px 6px rgba(0,0,0,0.07); }
+  .step-card .step-num { background: var(--blue-dark); color: white; width: 26px; height: 26px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; margin-bottom: 8px; }
+  .step-card h4 { font-size: 12px; font-weight: 700; color: var(--blue-dark); margin-bottom: 4px; }
+  .step-card p { font-size: 11px; color: var(--gray-mid); line-height: 1.4; }
+
+  .workflow-table-wrap { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); overflow-x: auto; }
+  .workflow-table-wrap h3 { font-size: 14px; font-weight: 700; color: var(--blue-dark); margin-bottom: 14px; }
+  table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+  th { background: var(--blue-dark); color: white; padding: 9px 10px; text-align: left; font-weight: 600; white-space: nowrap; }
+  td { padding: 8px 10px; border-bottom: 1px solid var(--gray-border); vertical-align: top; }
+  tr:hover td { background: var(--blue-light); }
+  .badge { display: inline-block; padding: 2px 7px; border-radius: 10px; font-size: 10px; font-weight: 700; }
+  .badge-high { background: #fde8e8; color: #c0392b; }
+  .badge-med { background: #fef3cd; color: #7a5500; }
+  .badge-low { background: #e8f8ee; color: #1a6e38; }
+  .badge-wave1 { background: #e8f1fb; color: #0a3d6e; }
+  .badge-wave2 { background: #f0f4f9; color: #2c3e50; }
+  .badge-wave3 { background: #f8f8f8; color: #5a6a7e; }
+  .badge-plan { background: #fff0e0; color: #7a4000; }
+  .badge-done { background: #e8f8ee; color: #1a6e38; }
+
+  /* AI READINESS */
+  .ai-cards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+  .ai-card { background: white; border-radius: 8px; padding: 20px; border-left: 4px solid var(--blue-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.07); transition: transform 0.2s; }
+  .ai-card:hover { transform: translateY(-2px); }
+  .ai-card .ai-icon { font-size: 24px; margin-bottom: 8px; }
+  .ai-card h4 { font-size: 13px; font-weight: 700; color: var(--blue-dark); margin-bottom: 6px; }
+  .ai-card p { font-size: 12px; color: var(--gray-mid); line-height: 1.5; }
+  .ai-card:nth-child(2) { border-left-color: var(--gold); }
+  .ai-card:nth-child(3) { border-left-color: #27ae60; }
+  .ai-card:nth-child(4) { border-left-color: #8e44ad; }
+  .ai-card:nth-child(5) { border-left-color: #e67e22; }
+  .ai-card:nth-child(6) { border-left-color: #c0392b; }
+  .ai-card:nth-child(7) { border-left-color: #16a085; }
+  .ai-card:nth-child(8) { border-left-color: #2980b9; }
+
+  /* DISCOVERY QUESTIONS */
+  .dq-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 20px; }
+  .dq-card { background: white; border-radius: 8px; padding: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+  .dq-card h4 { font-size: 12px; font-weight: 700; color: var(--blue-mid); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid var(--gray-border); }
+  .dq-card li { font-size: 12px; color: var(--gray-dark); line-height: 1.6; margin-bottom: 4px; list-style: disc; margin-left: 14px; }
+  .copy-btn { background: var(--blue-dark); color: white; border: none; border-radius: 6px; padding: 10px 20px; font-size: 12px; cursor: pointer; margin-bottom: 16px; transition: background 0.2s; }
+  .copy-btn:hover { background: var(--blue-mid); }
+
+  /* WIPRO APPROACH */
+  .phases-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+  .phase-card { background: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); position: relative; }
+  .phase-card .phase-label { background: var(--blue-dark); color: white; font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 10px; display: inline-block; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .phase-card h4 { font-size: 13px; font-weight: 700; color: var(--blue-dark); margin-bottom: 4px; }
+  .phase-card .duration { font-size: 11px; color: var(--gold); font-weight: 600; margin-bottom: 10px; }
+  .phase-card h5 { font-size: 11px; font-weight: 700; color: var(--blue-accent); text-transform: uppercase; letter-spacing: 0.3px; margin: 8px 0 4px; }
+  .phase-card li { font-size: 11.5px; color: var(--gray-dark); line-height: 1.5; margin-left: 14px; list-style: disc; margin-bottom: 2px; }
+  .phase-card:nth-child(2) .phase-label { background: #27ae60; }
+  .phase-card:nth-child(3) .phase-label { background: var(--blue-mid); }
+  .phase-card:nth-child(4) .phase-label { background: #8e44ad; }
+
+  /* CTA */
+  .cta-section { background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); border-radius: 10px; padding: 32px; text-align: center; color: white; margin-top: 24px; }
+  .cta-section h2 { font-size: 18px; margin-bottom: 10px; }
+  .cta-section p { font-size: 13px; color: #a8c4e0; max-width: 700px; margin: 0 auto 20px; line-height: 1.7; font-style: italic; }
+  .cta-btn { background: var(--gold); color: var(--blue-dark); border: none; border-radius: 7px; padding: 14px 32px; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.2s; }
+  .cta-btn:hover { background: #e0aa30; transform: translateY(-1px); }
+
+  /* MODAL */
+  .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; align-items: center; justify-content: center; }
+  .modal-overlay.open { display: flex; }
+  .modal { background: white; border-radius: 10px; padding: 32px; max-width: 560px; width: 90%; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+  .modal h3 { font-size: 17px; font-weight: 700; color: var(--blue-dark); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid var(--blue-accent); }
+  .modal li { font-size: 13px; line-height: 1.7; color: var(--gray-dark); margin-left: 18px; list-style: disc; margin-bottom: 4px; }
+  .modal-close { background: var(--blue-dark); color: white; border: none; border-radius: 6px; padding: 10px 24px; font-size: 13px; cursor: pointer; margin-top: 20px; float: right; }
+
+  /* SECTION TITLES */
+  .section-title { font-size: 16px; font-weight: 700; color: var(--blue-dark); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .section-title::after { content: ''; flex: 1; height: 2px; background: linear-gradient(to right, var(--blue-accent), transparent); }
+
+  @media (max-width: 1100px) {
+    .arch-layout { grid-template-columns: 1fr; }
+    .detail-panel { position: static; max-height: none; }
+    .outcomes-grid { grid-template-columns: repeat(2,1fr); }
+    .ai-cards-grid { grid-template-columns: repeat(2,1fr); }
+    .dq-grid { grid-template-columns: repeat(2,1fr); }
+    .phases-grid { grid-template-columns: repeat(2,1fr); }
+    .steps-row { grid-template-columns: repeat(4,1fr); }
+    .ra-outer { grid-template-columns: 1fr; }
+    .ra-left-stack { flex-direction: row; flex-wrap: wrap; gap: 4px; }
+    .ra-cap-pill, .ra-adv-pill { min-height: auto; padding: 6px 10px; font-size: 10px; }
+    .ra-right-panel { position: static; }
+    .ra-sell-grid { grid-template-columns: repeat(2,1fr); }
+    .ra-how-grid { grid-template-columns: repeat(2,1fr); }
+    .ra-body { grid-template-columns: 1fr; }
+    .ra-trust-col { border-right: none; border-bottom: 2px solid #2ecc8a; }
+  }
+
+  /* ===== REFERENCE ARCHITECTURE PAGE (v2 – 2D diagram) ===== */
+  .ra-page-header { background: linear-gradient(135deg, #0a1628 0%, #1a2d5c 60%, #2d1a5c 100%); border-radius: 10px; padding: 22px 28px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; border-left: 5px solid #7b5ea7; }
+  .ra-eyebrow { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #8ab4e8; margin-bottom: 4px; font-weight: 600; }
+  .ra-page-title { font-size: 20px; font-weight: 700; color: white; line-height: 1.3; }
+  .ra-subtitle { font-size: 12px; color: #a8bcd8; margin-top: 4px; }
+  .ra-buyers-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .ra-buyer-tag { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: #d4e4f8; font-size: 10px; font-weight: 600; padding: 4px 10px; border-radius: 12px; white-space: nowrap; }
+
+  /* Outer shell: left labels | center 2D diagram | right principles */
+  .ra-outer { display: grid; grid-template-columns: 110px 1fr 220px; gap: 12px; align-items: start; margin-bottom: 18px; }
+
+  /* LEFT stack labels */
+  .ra-left-stack { display: flex; flex-direction: column; gap: 3px; position: sticky; top: 60px; }
+  .ra-stack-title { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-mid); text-align: center; margin-bottom: 5px; }
+  .ra-cap-pill { border-radius: 6px; padding: 10px 6px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 10px; font-weight: 700; letter-spacing: 0.3px; line-height: 1.3; cursor: default; transition: filter 0.2s; }
+  .ra-cap-pill:hover { filter: brightness(0.88); }
+  .ra-adv-pill { border-radius: 6px; padding: 7px 6px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 9.5px; font-weight: 700; margin-top: 6px; }
+
+  /* ---- 2D DIAGRAM ---- */
+  .ra-diagram { background: #f0f3f8; border-radius: 10px; border: 1.5px solid #ccd5e8; overflow: hidden; }
+
+  /* TOP BAND: Collaborative Ecosystem */
+  .ra-top-band { background: linear-gradient(90deg, #c9962a 0%, #e8b830 100%); padding: 10px 16px; display: flex; align-items: center; gap: 10px; }
+  .ra-top-band-label { font-size: 11px; font-weight: 700; color: #3a2000; text-transform: uppercase; letter-spacing: 0.8px; }
+  .ra-eco-boxes { display: flex; flex-wrap: wrap; gap: 5px; flex: 1; }
+  .ra-eco-box { background: rgba(255,255,255,0.7); border: 1px solid rgba(0,0,0,0.12); border-radius: 4px; padding: 4px 9px; font-size: 10px; font-weight: 700; color: #3a2000; white-space: nowrap; }
+
+  /* MAIN BODY: left (data trust) + right (zones) */
+  .ra-body { display: grid; grid-template-columns: 152px 1fr; }
+
+  /* DATA TRUST — left green column */
+  .ra-trust-col { background: #e0f5ec; border-right: 2px solid #2ecc8a; padding: 10px 8px; display: flex; flex-direction: column; gap: 6px; }
+  .ra-trust-header { background: #0d8a5a; color: white; border-radius: 5px; padding: 6px 8px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 5px; }
+  .ra-trust-group { background: white; border-radius: 5px; border: 1px solid #b0dfc8; padding: 7px 8px; }
+  .ra-trust-group-title { font-size: 9.5px; font-weight: 700; color: #0a5c3a; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 4px; }
+  .ra-trust-item { background: #e8faf2; border: 1px solid #9dd4bb; border-radius: 3px; padding: 3px 6px; font-size: 10px; font-weight: 600; color: #0a4030; margin-bottom: 2px; }
+
+  /* RIGHT ZONES stack */
+  .ra-zones { display: flex; flex-direction: column; }
+
+  /* Each zone row */
+  .ra-zone { border-bottom: 1px solid rgba(255,255,255,0.4); padding: 9px 10px; }
+  .ra-zone-header { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; display: flex; align-items: center; gap: 6px; margin-bottom: 7px; }
+  .ra-zone-icon { font-size: 13px; }
+  .ra-zone-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+  .ra-chip { border-radius: 4px; padding: 4px 9px; font-size: 10.5px; font-weight: 600; white-space: nowrap; border: 1px solid; transition: transform 0.12s; }
+  .ra-chip:hover { transform: translateY(-1px); }
+
+  /* Zone colours */
+  .ra-zone-insight { background: linear-gradient(135deg,#0a3d2a,#0d5c40); }
+  .ra-zone-insight .ra-zone-header { color: #7dffc8; }
+  .ra-zone-insight .ra-chip { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.25); color: #d4fff0; }
+
+  .ra-zone-apps { background: linear-gradient(135deg,#0a2d60,#1a4a8a); }
+  .ra-zone-apps .ra-zone-header { color: #90c8ff; }
+  .ra-zone-apps .ra-chip { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.22); color: #d0e8ff; }
+
+  .ra-zone-ai { background: linear-gradient(135deg,#2d0a5c,#4d1a8a); }
+  .ra-zone-ai .ra-zone-header { color: #d4a8ff; }
+  .ra-zone-ai .ra-chip { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.22); color: #ead4ff; }
+
+  .ra-zone-products { background: linear-gradient(135deg,#0a205c,#1a3580); }
+  .ra-zone-products .ra-zone-header { color: #a8c8ff; }
+  .ra-zone-products .ra-chip { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.22); color: #c8e0ff; }
+
+  .ra-zone-foundation { background: #d8e4f0; }
+  .ra-zone-foundation .ra-zone-header { color: #0a2342; }
+  .ra-zone-foundation .ra-chip { background: white; border-color: #a0b8d0; color: #0a2342; }
+
+  /* BOTTOM BAND: Platform */
+  .ra-plat-band { background: linear-gradient(90deg,#1a1a3a,#2a2a5c); padding: 9px 16px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .ra-plat-label { font-size: 10px; font-weight: 700; color: #a0b8e8; text-transform: uppercase; letter-spacing: 0.7px; white-space: nowrap; }
+  .ra-plat-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+  .ra-plat-chip { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; padding: 3px 8px; font-size: 10px; font-weight: 600; color: #c8d8f0; white-space: nowrap; }
+
+  /* FLOW ARROW between zones */
+  .ra-flow-arrow { text-align: center; color: #5a8ab0; font-size: 11px; padding: 1px 0; background: #e8eef8; border-bottom: 1px solid #ccd5e8; }
+
+  /* RIGHT PANEL */
+  .ra-right-panel { background: white; border-radius: 10px; padding: 16px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); position: sticky; top: 60px; }
+  .ra-principles-header { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--blue-dark); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--blue-accent); display: flex; align-items: center; gap: 6px; }
+  .ra-principle { display: flex; gap: 8px; margin-bottom: 12px; align-items: flex-start; }
+  .ra-principle-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+  .ra-principle strong { font-size: 11.5px; color: var(--blue-dark); display: block; margin-bottom: 2px; }
+  .ra-principle p { font-size: 11px; color: var(--gray-mid); line-height: 1.5; }
+  .ra-diff-chip { border-radius: 5px; padding: 6px 9px; font-size: 11px; font-weight: 600; margin-bottom: 4px; display: block; }
+
+  /* BOTTOM BANNER */
+  .ra-bottom-banner { background: linear-gradient(135deg, #0a1628, #1a2d5c); border-radius: 8px; padding: 18px 24px; margin-bottom: 20px; border-top: 3px solid #7b5ea7; }
+  .ra-bottom-banner p { font-size: 13px; color: #c8d8f0; line-height: 1.7; text-align: center; font-style: italic; }
+
+  /* HOW TO READ */
+  .ra-how-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 20px; }
+  .ra-how-card { background: white; border-radius: 8px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); border-top: 3px solid var(--blue-accent); display: flex; gap: 10px; align-items: flex-start; }
+  .ra-how-num { background: var(--blue-dark); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
+  .ra-how-card p { font-size: 12px; color: var(--gray-dark); line-height: 1.5; }
+
+  /* WHERE WIPRO SELLS */
+  .ra-sell-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-bottom: 20px; }
+  .ra-sell-card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 4px solid; transition: transform 0.2s; }
+  .ra-sell-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+  .ra-sell-card:nth-child(1) { border-top-color: #2d7dd2; }
+  .ra-sell-card:nth-child(2) { border-top-color: #0d5c40; }
+  .ra-sell-card:nth-child(3) { border-top-color: #c0392b; }
+  .ra-sell-card:nth-child(4) { border-top-color: #7b2d8b; }
+  .ra-sell-icon { font-size: 24px; margin-bottom: 8px; }
+  .ra-sell-card h4 { font-size: 13px; font-weight: 700; color: var(--blue-dark); margin-bottom: 5px; line-height: 1.3; }
+  .ra-sell-buyer { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray-mid); margin-bottom: 8px; }
+  .ra-sell-card p { font-size: 11.5px; color: var(--gray-mid); line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <div>
+      <h1>LPL Enterprise Data Foundation &amp; <span>AI-Ready Platform</span></h1>
+      <div class="header-sub">Client Discovery Meeting | Wipro Consulting | Prepared June 2026</div>
+    </div>
+    <div class="wipro-badge">
+      <strong>Wipro</strong>
+      Data &amp; AI Practice
+    </div>
+  </div>
+  <div class="positioning">
+    "Wipro can help LPL establish a migration factory that de-risks the onboarding of 15 consumer workflows while building an AI-ready enterprise data foundation for trusted analytics, GenAI, and future agentic AI."
+  </div>
+</div>
+
+<div class="tabs-bar">
+  <button class="tab-btn active" onclick="showTab('exec')">Executive Summary</button>
+  <button class="tab-btn" onclick="showTab('arch')">Architecture</button>
+  <button class="tab-btn" onclick="showTab('onboard')">15 Workflow Onboarding</button>
+  <button class="tab-btn" onclick="showTab('ai')">AI Readiness</button>
+  <button class="tab-btn" onclick="showTab('dq')">Discovery Questions</button>
+  <button class="tab-btn" onclick="showTab('approach')">Wipro Approach</button>
+  <button class="tab-btn" onclick="showTab('refarch')">Reference Architecture</button>
+</div>
+
+<div class="main">
+
+  <!-- EXEC SUMMARY TAB -->
+  <div class="tab-content active" id="tab-exec">
+    <div class="exec-headline">
+      <h2>"The Enterprise Data Foundation is not just a data migration program. It is the control plane for trusted analytics, operational intelligence, GenAI, and future agentic AI across LPL and Commonwealth."</h2>
+    </div>
+
+    <div class="section-title">Four Business Outcomes</div>
+    <div class="outcomes-grid">
+      <div class="outcome-card">
+        <div class="icon">⚡</div>
+        <h4>Accelerate Migration</h4>
+        <p>Migrate 15 consumer workflows from Commonwealth onto the LPL Enterprise Data Foundation using a repeatable factory model.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="icon">✅</div>
+        <h4>Improve Trust</h4>
+        <p>Establish data quality, reconciliation, lineage, and governance so that every application and report consumes trusted, verified data.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="icon">🤖</div>
+        <h4>Enable AI-Ready Data Products</h4>
+        <p>Build governed data products for advisors, operations, risk, compliance, and enterprise analytics — the foundation for GenAI and agentic AI.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="icon">🏭</div>
+        <h4>Reduce Execution Risk</h4>
+        <p>Apply a factory-based onboarding model with proven templates, reconciliation automation, and wave-based cutover execution.</p>
+      </div>
+    </div>
+
+    <div class="section-title">How to Present This in the First Meeting</div>
+    <div class="talk-track-box">
+      <h3>Talk Track</h3>
+      <p>"We understand this program is foundational to LPL and Commonwealth's multi-year data and AI strategy. For the first discussion, we would like to align on three areas: first, what the target enterprise data foundation should look like; second, how to make it AI-ready through data products, semantic layer, governance, and trusted consumption patterns; and third, how to onboard the 15 consumer workflows using a repeatable migration factory. Our goal is not to come in with assumptions, but to ask the right questions, understand where execution risks exist, and identify where Wipro can help accelerate the program."</p>
+    </div>
+
+    <div class="cta-section">
+      <h2>Suggested Next Step</h2>
+      <p>"We recommend a 2–4 week rapid assessment focused on the 15 workflows, current platform architecture, dependency mapping, reconciliation needs, and AI-readiness gaps. The output would be a migration factory blueprint, risk heatmap, wave plan, and 90-day execution roadmap."</p>
+      <button class="cta-btn" onclick="document.getElementById('ctaModal').classList.add('open')">Start Rapid Assessment</button>
+    </div>
+  </div>
+
+  <!-- ARCHITECTURE TAB -->
+  <div class="tab-content" id="tab-arch">
+    <div class="section-title">Interactive Architecture — Click Any Component</div>
+    <div class="arch-layout">
+      <div class="arch-diagram">
+        <h3>Enterprise Data Foundation Stack</h3>
+
+        <!-- Layer 9: AI -->
+        <div class="arch-layer l-ai">
+          <div class="layer-header" onclick="showLayer('ai')">
+            <span>Layer 9: AI Enablement Layer</span><span>▲ Top</span>
+          </div>
+          <div class="layer-boxes">
+            <div class="arch-box" onclick="showBox('ai','ai_products')">AI-Ready Data Products</div>
+            <div class="arch-box" onclick="showBox('ai','vector_db')">Vector Database</div>
+            <div class="arch-box" onclick="showBox('ai','doc_intel')">Document Intelligence</div>
+            <div class="arch-box" onclick="showBox('ai','rag')">RAG Services</div>
+            <div class="arch-box" onclick="showBox('ai','feature_store')">Feature Store</div>
+            <div class="arch-box" onclick="showBox('ai','prompt_mgmt')">Prompt &amp; Context Mgmt</div>
+            <div class="arch-box" onclick="showBox('ai','guardrails')">AI Guardrails</div>
+            <div class="arch-box" onclick="showBox('ai','ai_obs')">AI Observability</div>
+            <div class="arch-box" onclick="showBox('ai','agent_orch')">Agentic AI Orchestration</div>
+          </div>
+        </div>
+
+        <!-- Layer 8: Governance (cross-cutting) -->
+        <div class="arch-layer l-govern">
+          <div class="layer-header" onclick="showLayer('govern')">
+            <span>Layer 8: Governance, Security, Privacy &amp; Controls ↔ Cross-Cutting</span>
+          </div>
+          <div class="layer-boxes">
+            <div class="arch-box" onclick="showBox('govern','data_gov')">Data Governance</div>
+            <div class="arch-box" onclick="showBox('govern','dq_gov')">Data Quality Governance</div>
+            <div class="arch-box" onclick="showBox('govern','metadata')">Metadata</div>
+            <div class="arch-box" onclick="showBox('govern','lineage')">Lineage</div>
+            <div class="arch-box" onclick="showBox('govern','privacy')">Privacy</div>
+            <div class="arch-box" onclick="showBox('govern','entitlements')">Entitlements</div>
+            <div class="arch-box" onclick="showBox('govern','access')">Access Controls</div>
+            <div class="arch-box" onclick="showBox('govern','reg_ctrl')">Regulatory Controls</div>
+            <div class="arch-box" onclick="showBox('govern','model_risk')">Model Risk Controls</div>
+            <div class="arch-box" onclick="showBox('govern','ai_gov')">AI Governance</div>
+          </div>
+        </div>
+
+        <!-- Layer 7: Consumption -->
+        <div class="arch-layer l-consume">
+          <div class="layer-header" onclick="showLayer('consume')">
+            <span>Layer 7: Consumption &amp; Application Onboarding</span>
+          </div>
+          <div class="layer-boxes">
+            <div class="arch-box" onclick="showBox('consume','wf15')">15 Commonwealth Workflows</div>
+            <div class="arch-box" onclick="showBox('consume','bi')">BI Dashboards</div>
+            <div class="arch-box" onclick="showBox('consume','apis')">APIs</div>
+            <div class="arch-box" onclick="showBox('consume','ops_apps')">Operational Apps</div>
+            <div class="arch-box" onclick="showBox('consume','advisor_apps')">Advisor Apps</div>
+            <div class="arch-box" onclick="showBox('consume','risk_apps')">Risk &amp; Compliance Apps</div>
+            <div class="arch-box" onclick="showBox('consume','ds')">Data Science Workbench</div>
+            <div class="arch-box" onclick="showBox('consume','genai')">GenAI Apps</div>
+            <div class="arch-box" onclick="showBox('consume','agentic')">Agentic AI Workflows</div>
+          </div>
+        </div>
+
+        <!-- Layer 6: Semantic -->
+        <div class="arch-layer l-semantic">
+          <div class="layer-header" onclick="showLayer('semantic')">
+            <span>Layer 6: Semantic Layer &amp; Metrics</span>
+          </div>
+          <div class="layer-boxes">
+            <div class="arch-box" onclick="showBox('semantic','glossary')">Business Glossary</div>
+            <div class="arch-box" onclick="showBox('semantic','metrics')">Metrics Definitions</div>
+            <div class="arch-box" onclick="showBox('semantic','sem_model')">Semantic Model</div>
+            <div class="arch-box" onclick="showBox('semantic','kpi')">KPI Catalog</div>
+            <div class="arch-box" onclick="showBox('semantic','biz_rules')">Business Rules</div>
+            <div class="arch-box" onclick="showBox('semantic','entitlements')">Entitlements</div>
+            <div class="arch-box" onclick="showBox('semantic','query_layer')">Reusable Query Layer</div>
+          </div>
+        </div>
+
+        <!-- Layer 5: Data Products -->
+        <div class="arch-layer l-product">
+          <div class="layer-header" onclick="showLayer('product')">
+            <span>Layer 5: Domain Data Products</span>
+          </div>
+          <div class="layer-boxes">
+            <div class="arch-box" onclick="showBox('product','client360')">Client 360</div>
+            <div class="arch-box" onclick="showBox('product','advisor360')">Advisor 360</div>
+            <div class="arch-box" onclick="showBox('product','account_hh')">Account &amp; Household</div>
+            <div class="arch-box" onclick="showBox('product','holdings')">Holdings &amp; Transactions</div>
+            <div class="arch-box" onclick="showBox('product','fees')">Fees &amp; Billing</div>
+            <div class="arch-box" onclick="showBox('product','risk')">Risk &amp; Compliance</div>
+            <div class="arch-box" onclick="showBox('product','advisor_prod')">Advisor Productivity</div>
+            <div class="arch-box" onclick="showBox('product','ops_wf')">Operational Workflow</div>
+          </div>
+        </div>
+
+        <!-- Layer 4: Curated -->
+        <div class="arch-layer l-curated">
+          <div class="layer-header" onclick="showLayer('curated')">
+            <span>Layer 4: Standardized / Curated Data Layer</span>
+          </div>
+          <div class="layer-boxes">
+            <div class="arch-box" onclick="showBox('curated','std_model')">Standardized Data Model</div>
+            <div class="arch-box" onclick="showBox('curated','cleansing')">Data Cleansing</div>
+            <div class="arch-box" onclick="showBox('curated','dq_rules')">Data Quality Rules</div>
+            <div class="arch-box" onclick="showBox('curated','ref_data')">Reference Data</div>
+            <div class="arch-box" onclick="showBox('curated','master_data')">Master Data</div>
+            <div class="arch-box" onclick="showBox('curated','recon')">Reconciliation</div>
+            <div class="arch-box" onclick="showBox('curated','conformed')">Conformed Dimensions</div>
+          </div>
+        </div>
+
+        <!-- Layer 3: Raw -->
+        <div class="arch-layer l-raw">
+          <div class="layer-header" onclick="showLayer('raw')">
+            <span>Layer 3: Raw / Landing Zone</span>
+          </div>
+          <div class="layer-boxes">
+            <div class="arch-box" onclick="showBox('raw','raw_store')">Raw Data Store</div>
+            <div class="arch-box" onclick="showBox('raw','immutable')">Immutable Landing</div>
+            <div class="arch-box" onclick="showBox('raw','audit')">Audit Trail</div>
+            <div class="arch-box" onclick="showBox('raw','schema')">Schema Capture</div>
+            <div class="arch-box" onclick="showBox('raw','archive')">Historical Archive</div>
+          </div>
+        </div>
+
+        <!-- Layer 2: Ingestion -->
+        <div class="arch-layer l-ingest">
+          <div class="layer-header" onclick="showLayer('ingest')">
+            <span>Layer 2: Ingestion &amp; Integration</span>
+          </div>
+          <div class="layer-boxes">
+            <div class="arch-box" onclick="showBox('ingest','batch')">Batch Ingestion</div>
+            <div class="arch-box" onclick="showBox('ingest','cdc')">CDC / Change Data Capture</div>
+            <div class="arch-box" onclick="showBox('ingest','api_int')">API Integration</div>
+            <div class="arch-box" onclick="showBox('ingest','stream')">Streaming / Event Ingestion</div>
+            <div class="arch-box" onclick="showBox('ingest','file')">File Ingestion</div>
+            <div class="arch-box" onclick="showBox('ingest','doc_ing')">Document Ingestion</div>
+            <div class="arch-box" onclick="showBox('ingest','contracts')">Data Contracts</div>
+          </div>
+        </div>
+
+        <!-- Layer 1: Source -->
+        <div class="arch-layer l-source">
+          <div class="layer-header" onclick="showLayer('source')">
+            <span>Layer 1: Source Systems</span><span>▼ Base</span>
+          </div>
+          <div class="layer-boxes">
+            <div class="arch-box" onclick="showBox('source','lpl_core')">LPL Core Platforms</div>
+            <div class="arch-box" onclick="showBox('source','cwlth')">Commonwealth Platforms</div>
+            <div class="arch-box" onclick="showBox('source','advisor_client')">Advisor / Client Systems</div>
+            <div class="arch-box" onclick="showBox('source','crm')">CRM</div>
+            <div class="arch-box" onclick="showBox('source','portfolio')">Portfolio / Trading</div>
+            <div class="arch-box" onclick="showBox('source','custody')">Custody / Clearing</div>
+            <div class="arch-box" onclick="showBox('source','finance')">Finance / Billing</div>
+            <div class="arch-box" onclick="showBox('source','risk_src')">Risk / Compliance</div>
+            <div class="arch-box" onclick="showBox('source','market_data')">External Market Data</div>
+            <div class="arch-box" onclick="showBox('source','docs')">Documents / Unstructured</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detail Panel -->
+      <div class="detail-panel" id="detailPanel">
+        <div class="placeholder-msg">
+          <div class="icon">👆</div>
+          <strong>Click any component</strong><br>to see details, discovery questions, and Wipro's role.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ONBOARDING TAB -->
+  <div class="tab-content" id="tab-onboard">
+    <div class="section-title">15 Workflow Onboarding Factory</div>
+    <div class="steps-row">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h4>Discover</h4>
+        <p>Inventory apps, workflows, reports, APIs, files, jobs, downstream dependencies</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h4>Classify</h4>
+        <p>Group by criticality, complexity, data domains, SLA, and risk</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h4>Map</h4>
+        <p>Source-to-target mapping, data contracts, transformation rules, security mapping</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h4>Build</h4>
+        <p>Pipelines, data products, APIs, semantic layer, access controls</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">5</div>
+        <h4>Validate</h4>
+        <p>Data quality, reconciliation, record counts, business rules, performance, security</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">6</div>
+        <h4>Parallel Run</h4>
+        <p>Run legacy and new platform side by side — compare results, capture exceptions</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">7</div>
+        <h4>Cutover &amp; Stabilize</h4>
+        <p>Controlled release, business sign-off, monitoring, hypercare, decommission legacy</p>
+      </div>
+    </div>
+
+    <div class="workflow-table-wrap">
+      <h3>Workflow Inventory — 15 Commonwealth Consumer Applications</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th><th>Workflow</th><th>Business Owner</th><th>Consuming App</th>
+            <th>Data Domains</th><th>Current Dependency</th><th>Target Data Product/API</th>
+            <th>SLA</th><th>Complexity</th><th>Risk</th><th>Wave</th><th>Target Date</th><th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="workflowTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- AI READINESS TAB -->
+  <div class="tab-content" id="tab-ai">
+    <div class="section-title">What Makes the Data Foundation AI-Ready?</div>
+    <div class="ai-cards-grid">
+      <div class="ai-card"><div class="ai-icon">🏛️</div><h4>Governed Data Products</h4><p>AI should consume trusted, curated, business-owned data products — not raw or untransformed source data.</p></div>
+      <div class="ai-card"><div class="ai-icon">📐</div><h4>Semantic Consistency</h4><p>AI responses must use approved business definitions, KPIs, and rules so that answers are consistent and defensible.</p></div>
+      <div class="ai-card"><div class="ai-icon">🔍</div><h4>Metadata and Lineage</h4><p>Every AI answer should be explainable back to its source system, transformation logic, and business rule.</p></div>
+      <div class="ai-card"><div class="ai-icon">🔒</div><h4>Secure Access</h4><p>AI must respect user entitlements, data privacy classifications, and regulatory constraints for client and advisor data.</p></div>
+      <div class="ai-card"><div class="ai-icon">📄</div><h4>Structured + Unstructured Data</h4><p>The foundation must support databases, documents, notes, forms, policies, procedures, and client communications.</p></div>
+      <div class="ai-card"><div class="ai-icon">🔌</div><h4>API-First Consumption</h4><p>Applications and AI agents should consume reusable APIs and data products — not custom point-to-point extracts.</p></div>
+      <div class="ai-card"><div class="ai-icon">⚖️</div><h4>Reconciliation and Trust</h4><p>AI adoption will fail if business users do not trust the migrated data. Reconciliation gates must be built into every cutover.</p></div>
+      <div class="ai-card"><div class="ai-icon">📊</div><h4>AI Observability</h4><p>Track prompts, responses, data sources, model behavior, hallucination risk, usage, and control exceptions across every AI deployment.</p></div>
+    </div>
+
+    <div class="section-title">AI Use Case Landscape for LPL / Commonwealth</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+      <div style="background:white;border-radius:8px;padding:18px;box-shadow:0 2px 8px rgba(0,0,0,0.07);border-top:3px solid var(--blue-accent);">
+        <h4 style="font-size:13px;font-weight:700;color:var(--blue-dark);margin-bottom:8px;">Advisor-Facing</h4>
+        <ul style="font-size:12px;color:var(--gray-mid);line-height:1.7;padding-left:16px;">
+          <li>AI-powered client insights</li><li>Portfolio commentary generation</li><li>Advisor productivity assistant</li><li>Proposal generation</li><li>Client meeting prep</li>
+        </ul>
+      </div>
+      <div style="background:white;border-radius:8px;padding:18px;box-shadow:0 2px 8px rgba(0,0,0,0.07);border-top:3px solid var(--gold);">
+        <h4 style="font-size:13px;font-weight:700;color:var(--blue-dark);margin-bottom:8px;">Operations-Facing</h4>
+        <ul style="font-size:12px;color:var(--gray-mid);line-height:1.7;padding-left:16px;">
+          <li>Automated exception triage</li><li>Document classification &amp; extraction</li><li>Onboarding automation</li><li>Reconciliation anomaly detection</li><li>Workflow routing agents</li>
+        </ul>
+      </div>
+      <div style="background:white;border-radius:8px;padding:18px;box-shadow:0 2px 8px rgba(0,0,0,0.07);border-top:3px solid #c0392b;">
+        <h4 style="font-size:13px;font-weight:700;color:var(--blue-dark);margin-bottom:8px;">Risk &amp; Compliance</h4>
+        <ul style="font-size:12px;color:var(--gray-mid);line-height:1.7;padding-left:16px;">
+          <li>Surveillance &amp; pattern detection</li><li>Regulatory report generation</li><li>Policy Q&amp;A assistant</li><li>Model risk documentation</li><li>Audit trail summarization</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- DISCOVERY QUESTIONS TAB -->
+  <div class="tab-content" id="tab-dq">
+    <div class="section-title">Questions for LPL / Commonwealth — First Meeting</div>
+    <button class="copy-btn" onclick="copyAllQuestions()">Copy All Questions to Clipboard</button>
+    <div class="dq-grid" id="dqGrid"></div>
+  </div>
+
+  <!-- WIPRO APPROACH TAB -->
+  <div class="tab-content" id="tab-approach">
+    <div class="section-title">Wipro Recommended Approach</div>
+    <div class="phases-grid">
+      <div class="phase-card">
+        <span class="phase-label">Phase 0</span>
+        <h4>Rapid Assessment</h4>
+        <div class="duration">2–4 Weeks</div>
+        <h5>Activities</h5>
+        <ul>
+          <li>Review current architecture</li>
+          <li>Inventory 15 workflows</li>
+          <li>Identify source &amp; consumer dependencies</li>
+          <li>Assess migration complexity</li>
+          <li>Identify AI-readiness gaps</li>
+          <li>Define migration factory blueprint</li>
+        </ul>
+        <h5>Deliverables</h5>
+        <ul>
+          <li>Current-state assessment</li>
+          <li>Workflow dependency map</li>
+          <li>Risk heatmap</li>
+          <li>Migration wave plan</li>
+          <li>AI-ready foundation blueprint</li>
+          <li>90-day execution roadmap</li>
+        </ul>
+      </div>
+      <div class="phase-card">
+        <span class="phase-label">Phase 1</span>
+        <h4>Pilot Workflow Migration</h4>
+        <div class="duration">6–8 Weeks</div>
+        <h5>Activities</h5>
+        <ul>
+          <li>Select 1–2 representative workflows</li>
+          <li>Define data contracts</li>
+          <li>Build data product / API</li>
+          <li>Perform reconciliation</li>
+          <li>Run parallel validation</li>
+          <li>Establish cutover playbook</li>
+        </ul>
+        <h5>Deliverables</h5>
+        <ul>
+          <li>Working migrated workflow</li>
+          <li>Reusable onboarding pattern</li>
+          <li>Validation &amp; reconciliation framework</li>
+          <li>Cutover checklist</li>
+          <li>Lessons learned</li>
+        </ul>
+      </div>
+      <div class="phase-card">
+        <span class="phase-label">Phase 2</span>
+        <h4>Migration Factory Scale-Out</h4>
+        <div class="duration">Waves-Based</div>
+        <h5>Activities</h5>
+        <ul>
+          <li>Onboard remaining workflows in waves</li>
+          <li>Reuse templates and accelerators</li>
+          <li>Automate validation</li>
+          <li>Track risks and dependencies</li>
+          <li>Support business testing</li>
+          <li>Execute cutovers</li>
+        </ul>
+        <h5>Deliverables</h5>
+        <ul>
+          <li>Wave-based migration execution</li>
+          <li>Migration dashboard</li>
+          <li>Data quality dashboard</li>
+          <li>Business sign-off tracker</li>
+          <li>Stabilization plan</li>
+        </ul>
+      </div>
+      <div class="phase-card">
+        <span class="phase-label">Phase 3</span>
+        <h4>AI-Ready Expansion</h4>
+        <div class="duration">Parallel Track</div>
+        <h5>Activities</h5>
+        <ul>
+          <li>Define priority data products</li>
+          <li>Build semantic layer</li>
+          <li>Enable AI-ready APIs</li>
+          <li>Add document intelligence</li>
+          <li>Create RAG patterns</li>
+          <li>AI governance &amp; observability</li>
+          <li>Build advisor / ops / risk AI use cases</li>
+        </ul>
+        <h5>Deliverables</h5>
+        <ul>
+          <li>AI-ready data products</li>
+          <li>Semantic &amp; metrics layer</li>
+          <li>RAG / GenAI reference architecture</li>
+          <li>AI governance controls</li>
+          <li>Use-case MVP roadmap</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cta-section">
+      <h2>Suggested Next Step</h2>
+      <p>"We recommend a 2–4 week rapid assessment focused on the 15 workflows, current platform architecture, dependency mapping, reconciliation needs, and AI-readiness gaps. The output would be a migration factory blueprint, risk heatmap, wave plan, and 90-day execution roadmap."</p>
+      <button class="cta-btn" onclick="document.getElementById('ctaModal').classList.add('open')">Start Rapid Assessment</button>
+    </div>
+  </div>
+
+
+  <!-- REFERENCE ARCHITECTURE TAB v2 -->
+  <div class="tab-content" id="tab-refarch">
+
+    <!-- Page Header -->
+    <div class="ra-page-header">
+      <div>
+        <div class="ra-eyebrow">Wipro DAAI &nbsp;·&nbsp; Capital Markets Practice &nbsp;·&nbsp; Reference Architecture</div>
+        <h2 class="ra-page-title">Data &amp; AI-Powered Capital Markets Enterprise Landscape</h2>
+        <div class="ra-subtitle">A blueprint for building a governed, AI-ready operating layer — from fragmented data to trusted insights and intelligent workflows</div>
+      </div>
+      <div class="ra-buyers-row">
+        <span class="ra-buyer-tag">CDO / CDAO</span>
+        <span class="ra-buyer-tag">CIO</span>
+        <span class="ra-buyer-tag">COO</span>
+        <span class="ra-buyer-tag">Head of Operations</span>
+        <span class="ra-buyer-tag">CRO</span>
+        <span class="ra-buyer-tag">Compliance</span>
+      </div>
+    </div>
+
+    <!-- THREE-COLUMN: left labels | center 2D diagram | right principles -->
+    <div class="ra-outer">
+
+      <!-- LEFT: Capability Stack Labels -->
+      <div class="ra-left-stack">
+        <div class="ra-stack-title">Wipro Capability Stack</div>
+        <div class="ra-cap-pill" style="background:#0d5c40;color:white;">Insight Activation</div>
+        <div class="ra-cap-pill" style="background:#0a3470;color:white;">Data-Powered Applications</div>
+        <div class="ra-cap-pill" style="background:#3d0d70;color:white;">AI &amp; Agent Engineering</div>
+        <div class="ra-cap-pill" style="background:#1a2d7a;color:white;">Data Products Engineering</div>
+        <div class="ra-cap-pill" style="background:#0d5a46;color:white;">Data Trust</div>
+        <div class="ra-cap-pill" style="background:#0d2e50;color:white;">Data Foundation</div>
+        <div class="ra-cap-pill" style="background:#1a2535;color:#8fb3d4;">Platform Foundation</div>
+        <div class="ra-adv-pill" style="background:#c9962a;color:#3a2000;">Architecture Advisory</div>
+      </div>
+
+      <!-- CENTER: 2D Diagram -->
+      <div class="ra-diagram">
+
+        <!-- TOP BAND: Collaborative Data Ecosystem -->
+        <div class="ra-top-band">
+          <div style="flex-shrink:0;">
+            <div style="font-size:9px;font-weight:700;color:#6a3a00;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:2px;">Collaborative</div>
+            <div style="font-size:11px;font-weight:800;color:#3a1800;text-transform:uppercase;letter-spacing:0.5px;">Data Ecosystem</div>
+          </div>
+          <div class="ra-eco-boxes">
+            <div class="ra-eco-box">Internal Data</div>
+            <div class="ra-eco-box">Market &amp; Reference Data</div>
+            <div class="ra-eco-box">Regulatory Data</div>
+            <div class="ra-eco-box">Counterparty Data</div>
+            <div class="ra-eco-box">Client &amp; Advisor Data</div>
+            <div class="ra-eco-box">Third-Party Feeds</div>
+            <div class="ra-eco-box">Unstructured Documents</div>
+          </div>
+        </div>
+
+        <!-- MAIN BODY: Data Trust column + Zones -->
+        <div class="ra-body">
+
+          <!-- DATA TRUST (left green column) -->
+          <div class="ra-trust-col">
+            <div class="ra-trust-header">🔒 Data Trust</div>
+
+            <div class="ra-trust-group">
+              <div class="ra-trust-group-title">Governance &amp; Strategy</div>
+              <div class="ra-trust-item">Data Governance</div>
+              <div class="ra-trust-item">Policy Controls</div>
+              <div class="ra-trust-item">Stewardship</div>
+            </div>
+
+            <div class="ra-trust-group">
+              <div class="ra-trust-group-title">Catalog &amp; Glossary</div>
+              <div class="ra-trust-item">Data Catalog</div>
+              <div class="ra-trust-item">Business Glossary</div>
+              <div class="ra-trust-item">Lineage</div>
+            </div>
+
+            <div class="ra-trust-group">
+              <div class="ra-trust-group-title">Quality &amp; Protection</div>
+              <div class="ra-trust-item">Data Quality</div>
+              <div class="ra-trust-item">Data Protection</div>
+              <div class="ra-trust-item">Master Data Mgmt</div>
+            </div>
+          </div>
+
+          <!-- RIGHT ZONES (stacked vertically) -->
+          <div class="ra-zones">
+
+            <!-- INSIGHT ACTIVATION -->
+            <div class="ra-zone ra-zone-insight">
+              <div class="ra-zone-header">
+                <span class="ra-zone-icon">📊</span>
+                <span>Insight Activation &nbsp;—&nbsp; Business Outcomes</span>
+              </div>
+              <div class="ra-zone-chips">
+                <div class="ra-chip">Executive Dashboards</div>
+                <div class="ra-chip">Self-Service Analytics</div>
+                <div class="ra-chip">AI Copilots</div>
+                <div class="ra-chip">Alerts &amp; Recommendations</div>
+                <div class="ra-chip">Workflow Automation</div>
+                <div class="ra-chip">API Consumption</div>
+                <div class="ra-chip">Audit Evidence</div>
+              </div>
+            </div>
+            <div class="ra-flow-arrow">▲ &nbsp;Consume &amp; Activate&nbsp; ▲</div>
+
+            <!-- DATA-POWERED APPLICATIONS -->
+            <div class="ra-zone ra-zone-apps">
+              <div class="ra-zone-header">
+                <span class="ra-zone-icon">⚡</span>
+                <span>Data-Powered Applications &nbsp;—&nbsp; Capital Markets Intelligence</span>
+              </div>
+              <div class="ra-zone-chips">
+                <div class="ra-chip">Settlement Break Resolution Agent</div>
+                <div class="ra-chip">Regulatory Intelligence Agent</div>
+                <div class="ra-chip">Trade Surveillance Assistant</div>
+                <div class="ra-chip">Advisor Intelligence Copilot</div>
+                <div class="ra-chip">Research Copilot</div>
+                <div class="ra-chip">Operations Command Center</div>
+                <div class="ra-chip">Data Product Marketplace</div>
+              </div>
+            </div>
+            <div class="ra-flow-arrow">▲ &nbsp;Power Applications&nbsp; ▲</div>
+
+            <!-- AI & AGENT ENGINEERING -->
+            <div class="ra-zone ra-zone-ai">
+              <div class="ra-zone-header">
+                <span class="ra-zone-icon">🤖</span>
+                <span>AI &amp; Agent Engineering &nbsp;—&nbsp; Governed Intelligence</span>
+              </div>
+              <div class="ra-zone-chips">
+                <div class="ra-chip">GenAI Engineering</div>
+                <div class="ra-chip">RAG for Trade &amp; Regulatory Docs</div>
+                <div class="ra-chip">Semantic Layer for Structured Data</div>
+                <div class="ra-chip">Agentic Post-Trade Workflows</div>
+                <div class="ra-chip">Feature Engineering</div>
+                <div class="ra-chip">Model Monitoring</div>
+                <div class="ra-chip">Human-in-the-Loop Controls</div>
+                <div class="ra-chip">AI Governance</div>
+              </div>
+            </div>
+            <div class="ra-flow-arrow">▲ &nbsp;Serve AI &amp; Analytics&nbsp; ▲</div>
+
+            <!-- DATA PRODUCTS ENGINEERING -->
+            <div class="ra-zone ra-zone-products">
+              <div class="ra-zone-header">
+                <span class="ra-zone-icon">🗂️</span>
+                <span>Data Products Engineering &nbsp;—&nbsp; Capital Markets Domain Products</span>
+              </div>
+              <div class="ra-zone-chips">
+                <div class="ra-chip">Trade Data Product</div>
+                <div class="ra-chip">Settlement Data Product</div>
+                <div class="ra-chip">Position Data Product</div>
+                <div class="ra-chip">Counterparty Data Product</div>
+                <div class="ra-chip">Security Master Data Product</div>
+                <div class="ra-chip">Risk Data Product</div>
+                <div class="ra-chip">Regulatory Reporting Product</div>
+                <div class="ra-chip">Client / Advisor Data Product</div>
+              </div>
+            </div>
+            <div class="ra-flow-arrow">▲ &nbsp;Build on Trusted Foundation&nbsp; ▲</div>
+
+            <!-- DATA FOUNDATION -->
+            <div class="ra-zone ra-zone-foundation">
+              <div class="ra-zone-header">
+                <span class="ra-zone-icon">🏗️</span>
+                <span style="color:#0a2342;">Data Foundation &nbsp;—&nbsp; Ingest, Store, Process, Standardize</span>
+              </div>
+              <div class="ra-zone-chips">
+                <div class="ra-chip">Data Ingestion</div>
+                <div class="ra-chip">Batch Pipelines</div>
+                <div class="ra-chip">Streaming Pipelines</div>
+                <div class="ra-chip">Lakehouse</div>
+                <div class="ra-chip">Data Warehouse</div>
+                <div class="ra-chip">MDM</div>
+                <div class="ra-chip">Metadata Store</div>
+                <div class="ra-chip">Reference Data</div>
+              </div>
+            </div>
+
+          </div><!-- /ra-zones -->
+        </div><!-- /ra-body -->
+
+        <!-- BOTTOM BAND: Platform Foundation -->
+        <div class="ra-plat-band">
+          <div class="ra-plat-label">⚙️ Platform Foundation</div>
+          <div class="ra-plat-chips">
+            <div class="ra-plat-chip">Hybrid Cloud</div>
+            <div class="ra-plat-chip">AWS / Azure / GCP</div>
+            <div class="ra-plat-chip">Snowflake</div>
+            <div class="ra-plat-chip">Databricks</div>
+            <div class="ra-plat-chip">Security</div>
+            <div class="ra-plat-chip">Observability</div>
+            <div class="ra-plat-chip">DevSecOps</div>
+            <div class="ra-plat-chip">FinOps</div>
+            <div class="ra-plat-chip">API Gateway</div>
+          </div>
+        </div>
+
+      </div><!-- /ra-diagram -->
+
+      <!-- RIGHT: Architecture Principles -->
+      <div class="ra-right-panel">
+        <div class="ra-principles-header">🎯 Architecture Principles</div>
+
+        <div class="ra-principle">
+          <div class="ra-principle-icon">🔗</div>
+          <div><strong>Collaborative Data Ecosystem</strong><p>Connects business, technology, risk, operations, and third-party capital markets data into a unified operating layer.</p></div>
+        </div>
+        <div class="ra-principle">
+          <div class="ra-principle-icon">🛡️</div>
+          <div><strong>Strong Data Governance</strong><p>Enforces ownership, quality, lineage, protection, and trust across every data product and workflow.</p></div>
+        </div>
+        <div class="ra-principle">
+          <div class="ra-principle-icon">🗂️</div>
+          <div><strong>AI-Ready Data Products</strong><p>Reusable, governed domain products for trade, settlement, risk, regulatory, and client analytics.</p></div>
+        </div>
+        <div class="ra-principle">
+          <div class="ra-principle-icon">🤖</div>
+          <div><strong>Governed Agentic AI</strong><p>Human-approved agents with monitoring, auditability, model risk controls, and compliance guardrails.</p></div>
+        </div>
+        <div class="ra-principle">
+          <div class="ra-principle-icon">📊</div>
+          <div><strong>Insight Activation</strong><p>Converts trusted capital markets data into decisions, alerts, and audit-ready business outcomes.</p></div>
+        </div>
+        <div class="ra-principle">
+          <div class="ra-principle-icon">⚙️</div>
+          <div><strong>Scalable Platform Foundation</strong><p>Hybrid cloud, DevSecOps, FinOps, observability, and security built for enterprise scale.</p></div>
+        </div>
+
+        <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--gray-border);">
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.7px;color:var(--blue-dark);margin-bottom:8px;">Wipro Builds This</div>
+          <span class="ra-diff-chip" style="background:#eef4ff;color:#0a2e60;">🏛️ Foundation &amp; Data Products</span>
+          <span class="ra-diff-chip" style="background:#e6f9f1;color:#0a3d28;">⚙️ Agentic Post-Trade Ops</span>
+          <span class="ra-diff-chip" style="background:#fdf0ff;color:#3d0070;">🤖 Governed AI Engineering</span>
+          <span class="ra-diff-chip" style="background:#fff8e6;color:#6a3a00;">📊 Insight Activation</span>
+        </div>
+      </div>
+
+    </div><!-- /ra-outer -->
+
+    <!-- BOTTOM BANNER -->
+    <div class="ra-bottom-banner">
+      <p>"Wipro DAAI helps capital markets firms build a governed, AI-ready operating layer that powers trusted insights, intelligent workflows, regulatory confidence, and measurable business outcomes."</p>
+    </div>
+
+    <!-- HOW TO READ -->
+    <div class="section-title">How to Read This Architecture</div>
+    <div class="ra-how-grid">
+      <div class="ra-how-card">
+        <div class="ra-how-num">1</div>
+        <p><strong>Start at the bottom.</strong> Wipro builds the platform and data foundation to ingest, store, and standardize fragmented capital markets data.</p>
+      </div>
+      <div class="ra-how-card" style="border-top-color:#0d5a46;">
+        <div class="ra-how-num" style="background:#0d5a46;">2</div>
+        <p><strong>Apply Data Trust.</strong> Governance, lineage, quality, and protection ensure AI and analytics consume only verified, compliant data.</p>
+      </div>
+      <div class="ra-how-card" style="border-top-color:#1a2d7a;">
+        <div class="ra-how-num" style="background:#1a2d7a;">3</div>
+        <p><strong>Build Data Products.</strong> Reusable trade, settlement, position, risk, regulatory, and client data products serve every consuming team.</p>
+      </div>
+      <div class="ra-how-card" style="border-top-color:#0d5c40;">
+        <div class="ra-how-num" style="background:#0d5c40;">4</div>
+        <p><strong>Activate outcomes.</strong> Governed AI agents, copilots, dashboards, and audit controls deliver measurable business results.</p>
+      </div>
+    </div>
+
+    <!-- WHERE WIPRO SELLS -->
+    <div class="section-title">Where Wipro Sells This</div>
+    <div class="ra-sell-grid">
+      <div class="ra-sell-card">
+        <div class="ra-sell-icon">🏛️</div>
+        <h4>AI-Ready Data Foundation &amp; Data Products</h4>
+        <div class="ra-sell-buyer">Buyer: CDO / CDAO / CIO</div>
+        <p>Trusted capital markets data products, semantic layer, lineage, data quality, and AI-ready foundation for analytics and regulatory reporting.</p>
+      </div>
+      <div class="ra-sell-card">
+        <div class="ra-sell-icon">⚙️</div>
+        <h4>Agentic Post-Trade Operations</h4>
+        <div class="ra-sell-buyer">Buyer: COO / Head of Operations</div>
+        <p>Settlement break resolution, failed trade analysis, exception prioritization, next-best action, and post-trade workflow automation.</p>
+      </div>
+      <div class="ra-sell-card">
+        <div class="ra-sell-icon">🛡️</div>
+        <h4>AI Governance &amp; Regulatory Intelligence</h4>
+        <div class="ra-sell-buyer">Buyer: CRO / Compliance / Model Risk / IT Risk</div>
+        <p>AI control tower, audit trail, policy controls, model monitoring, regulatory evidence generation, and responsible AI controls.</p>
+      </div>
+      <div class="ra-sell-card">
+        <div class="ra-sell-icon">💡</div>
+        <h4>Wealth, Research &amp; Front-Office AI</h4>
+        <div class="ra-sell-buyer">Buyer: Wealth / Research / Advisor / Front Office</div>
+        <p>Advisor copilot, research assistant, client intelligence, compliant content generation, and front-office productivity acceleration.</p>
+      </div>
+    </div>
+
+  </div><!-- /tab-refarch -->
+
+</div>
+
+<!-- CTA MODAL -->
+<div class="modal-overlay" id="ctaModal">
+  <div class="modal">
+    <h3>Rapid Assessment — Kickoff Agenda</h3>
+    <ul>
+      <li>Confirm priority workflows and business criticality ranking</li>
+      <li>Identify business and technology owners for each data domain</li>
+      <li>Review existing architecture, ingestion patterns, and current-state platform</li>
+      <li>Validate MVP requirements and November 2026 cutover milestones</li>
+      <li>Define pilot workflow for Phase 1 proof of concept</li>
+      <li>Agree 90-day plan, team structure, and engagement model</li>
+    </ul>
+    <button class="modal-close" onclick="document.getElementById('ctaModal').classList.remove('open')">Close</button>
+  </div>
+</div>
+
+<script>
+// ---- TAB NAVIGATION ----
+function showTab(id) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// ---- ARCH DETAIL DATA ----
+const archData = {
+  source: {
+    _layer: {
+      title: 'Layer 1: Source Systems',
+      what: 'The source layer contains all operational, client, advisor, transaction, account, investment, regulatory, and document data generated across LPL and Commonwealth platforms.',
+      why: 'Understanding which sources are authoritative, their data quality, and their integration patterns is the foundation for all migration and data product work.',
+      capabilities: ['Operational platforms (core banking, trading, CRM)', 'Client and advisor master data', 'Transaction, holdings, custody feeds', 'Finance, billing, and fee systems', 'Risk, compliance, and regulatory systems', 'External market data and reference data', 'Documents, PDFs, forms, communications'],
+      questions: ['What are the key source systems for the 15 Commonwealth workflows?', 'Which systems are authoritative for client, account, household, advisor, product, holdings, transactions, and fees?', 'What are the current data quality issues at source?', 'Which sources are batch, real-time, API-based, file-based, or event-driven?', 'What data is needed for MVP versus future phases?'],
+      wipro: ['Source system inventory and profiling', 'Authoritative source mapping per entity', 'Data quality baseline assessment', 'Integration pattern documentation']
+    },
+    lpl_core: { title: 'LPL Core Platforms', what: 'LPL\'s primary operational platforms including brokerage, clearing, account management, and advisor systems.', why: 'These are the target authoritative systems post-Commonwealth integration. Understanding their data model is critical.', capabilities: ['Account and household management', 'Advisor registration and compensation', 'Clearing and settlement', 'Fee billing and revenue'], questions: ['What is the data model and schema for core LPL account and advisor entities?', 'Are LPL core platforms already connected to the enterprise data foundation?', 'What APIs or feeds are available?'], wipro: ['LPL core system profiling', 'Entity mapping to enterprise data model', 'API catalog documentation'] },
+    cwlth: { title: 'Commonwealth Platforms', what: 'Commonwealth\'s existing operational and data platforms that are being migrated onto the LPL enterprise foundation.', why: 'The 15 workflows currently depend on Commonwealth platform data. Migration requires understanding every dependency.', capabilities: ['Commonwealth account and client data', 'Commonwealth advisor data', 'Proprietary reporting and analytics', 'Workflow and operational systems'], questions: ['What are Commonwealth\'s primary operational platforms?', 'Which Commonwealth systems will be decommissioned post-migration?', 'What is the timeline for platform sunset?'], wipro: ['Commonwealth system inventory', 'Dependency mapping to 15 workflows', 'Decommission risk assessment'] }
+  },
+  ingest: {
+    _layer: {
+      title: 'Layer 2: Ingestion & Integration',
+      what: 'This layer standardizes how data enters the enterprise data foundation. It covers all patterns from batch file loads to real-time event streaming.',
+      why: 'Inconsistent or point-to-point integrations are a primary source of data quality problems and operational risk. A standardized ingestion layer creates reliability and auditability.',
+      capabilities: ['Batch ETL / ELT pipelines', 'CDC (change data capture) for near-real-time replication', 'API-based integration', 'Event streaming (Kafka/Kinesis)', 'File and document ingestion', 'Data contract enforcement at entry point'],
+      questions: ['Which workflows require real-time versus batch data?', 'Are existing integrations point-to-point or centralized?', 'What SLAs are expected for each consuming application?', 'Is there a standard data contract model today?', 'Are Kafka, APIs, ETL tools, or cloud-native pipelines already in place?'],
+      wipro: ['Build reusable ingestion pipeline templates', 'Define standard data contracts', 'Establish SLA monitoring for all ingestion patterns', 'Create onboarding standards for new source systems']
+    }
+  },
+  raw: {
+    _layer: {
+      title: 'Layer 3: Raw / Landing Zone',
+      what: 'The system-of-record capture layer where data lands without business transformation. Preserves source fidelity for audit, reprocessing, and lineage.',
+      why: 'Raw preservation is critical for regulatory compliance, debugging, reprocessing after logic changes, and data lineage traceability from source to consumption.',
+      capabilities: ['Immutable raw storage', 'Full audit trail of source extracts', 'Schema versioning and capture', 'Historical data archive for time-travel queries', 'Partitioned storage by source/date'],
+      questions: ['Is raw history required for all sources?', 'How long should raw data be retained per regulatory requirements?', 'What audit and regulatory requirements apply?', 'Is data lineage required from source to consumption?'],
+      wipro: ['Raw landing zone design and implementation', 'Retention policy framework', 'Schema registry integration', 'Audit trail architecture']
+    }
+  },
+  curated: {
+    _layer: {
+      title: 'Layer 4: Standardized / Curated Data Layer',
+      what: 'This layer makes data consistent, trusted, and reusable across all consuming applications. It applies business rules, cleansing, reference data alignment, and reconciliation.',
+      why: 'Without a curated layer, every application team independently transforms raw data — creating inconsistent results, disputed reports, and unscalable maintenance.',
+      capabilities: ['Enterprise canonical data model', 'Data quality rule execution and scoring', 'Reference and master data management', 'Business reconciliation and exception management', 'Conformed dimensions for cross-domain analytics'],
+      questions: ['What common entities are shared across LPL and Commonwealth?', 'Are client, account, advisor, household, product, and transaction definitions aligned?', 'Where do reports or workflows currently disagree on numbers?', 'What business reconciliation is mandatory before cutover sign-off?'],
+      wipro: ['Data quality framework deployment', 'Reconciliation automation and exception dashboards', 'Source-to-target transformation mapping', 'Business rule catalog and governance']
+    }
+  },
+  product: {
+    _layer: {
+      title: 'Layer 5: Domain Data Products',
+      what: 'Data products are reusable, governed, business-owned datasets that serve applications, analytics, AI, and operations through well-defined APIs and SLAs.',
+      why: 'The data product model shifts ownership to business domains, creates accountability for quality and SLAs, and reduces duplication across consuming teams.',
+      capabilities: ['Client 360 — unified view of client relationships, accounts, holdings, and interactions', 'Advisor 360 — advisor profile, book of business, compensation, productivity', 'Account and Household — hierarchy, attributes, relationships', 'Holdings and Transactions — positions, trades, performance', 'Fees and Billing — fee structures, revenue, billing events', 'Risk and Compliance — surveillance, exposures, regulatory flags'],
+      questions: ['Which data products are needed for the 15 consuming workflows?', 'Who owns each data domain today?', 'What are the service-level expectations per data product?', 'Which data products are MVP-critical for November 2026?', 'What data products are needed to support AI use cases?'],
+      wipro: ['Data product taxonomy definition', 'Product ownership model and stewardship', 'Data product templates with SLAs, quality rules, access rules', 'API-first consumption pattern design']
+    }
+  },
+  semantic: {
+    _layer: {
+      title: 'Layer 6: Semantic Layer & Metrics',
+      what: 'The semantic layer ensures that business users, applications, dashboards, and AI agents all use the same business definitions, KPIs, and query logic.',
+      why: 'Inconsistent metric definitions are one of the most common failure modes in enterprise analytics. The semantic layer creates a single source of truth for business meaning.',
+      capabilities: ['Business glossary with approved definitions', 'Certified metrics and KPI catalog', 'Semantic data model mapping business concepts to physical data', 'Entitlement-aware query rewriting', 'Reusable query layer for BI, APIs, and AI agents'],
+      questions: ['Which business metrics are frequently disputed between teams?', 'Do LPL and Commonwealth use common definitions for AUM, flows, revenue, households, and client segments?', 'Are BI tools currently querying raw or curated data directly?', 'Should the semantic layer serve BI tools, data APIs, and AI agents?'],
+      wipro: ['Enterprise semantic model build', 'Metrics catalog with business owner sign-off', 'Governed self-service analytics enablement', 'AI-safe business context preparation for LLMs']
+    }
+  },
+  consume: {
+    _layer: {
+      title: 'Layer 7: Consumption & Application Onboarding',
+      what: 'This layer is where consuming applications are migrated from legacy data dependencies to the new enterprise data foundation via APIs, data products, and governed query access.',
+      why: 'The 15 Commonwealth workflows are the primary migration deliverable. Each application must be inventoried, mapped, migrated, validated, and cut over in a controlled sequence.',
+      capabilities: ['Wave-based migration of 15+ consumer applications', 'BI and reporting migration', 'Operational application API integration', 'AI and GenAI application enablement', 'Data science and model training pipelines'],
+      questions: ['What are the 15 workflows and which applications consume them?', 'What datasets, APIs, reports, files, and SLAs does each application require?', 'What is the target migration sequence?', 'Which workflows are highest risk or most complex?', 'Which workflows must be completed by November 2026?'],
+      wipro: ['Consumer application inventory and dependency map', 'Migration wave planning and sequencing', 'API / data product onboarding templates', 'Parallel run orchestration', 'Cutover execution and stabilization support']
+    }
+  },
+  govern: {
+    _layer: {
+      title: 'Layer 8: Governance, Security, Privacy & Controls',
+      what: 'This cross-cutting layer establishes trusted, controlled, and compliant data usage across every tier of the architecture.',
+      why: 'In a financial services environment, governance is not optional. Regulatory requirements, privacy obligations, and fiduciary responsibilities demand rigorous controls on data access, quality, and lineage.',
+      capabilities: ['Data governance operating model and stewardship', 'Automated data quality monitoring and alerting', 'End-to-end metadata and lineage capture', 'Privacy classification and masking', 'Role-based entitlements and access control', 'Regulatory and model risk controls'],
+      questions: ['What governance tools are currently used (Collibra, Alation, Purview)?', 'Who owns data quality issues today — engineering or the business?', 'What privacy and access controls apply to client and advisor data?', 'Is lineage required for regulatory reporting?', 'What AI governance standards are expected for LLM/GenAI deployments?'],
+      wipro: ['Governance operating model design', 'Metadata and lineage implementation', 'Access control framework', 'AI governance and responsible AI controls', 'Data stewardship training and enablement']
+    }
+  },
+  ai: {
+    _layer: {
+      title: 'Layer 9: AI Enablement Layer',
+      what: 'This layer prepares the enterprise data foundation for AI consumption — including GenAI, RAG, feature engineering, agentic workflows, and observability.',
+      why: 'AI should never directly consume untrusted raw data. Governed data products, semantic context, metadata, and documents must be prepared and packaged for safe AI consumption.',
+      capabilities: ['AI-ready data products with quality guarantees', 'Vector database for semantic search and RAG', 'Document intelligence and extraction', 'Feature store for ML model training', 'Prompt and context management for LLM applications', 'AI guardrails, monitoring, and observability'],
+      questions: ['What AI use cases are planned after the data foundation is live?', 'Are use cases focused on advisors, operations, risk/compliance, or client service?', 'What structured and unstructured data must be included?', 'What controls are required before GenAI can be used in production?', 'Should agents query the semantic layer, APIs, or RAG indexes?'],
+      wipro: ['AI-ready data product design', 'RAG architecture and vector indexing', 'Agentic AI patterns and orchestration', 'AI observability platform', 'Guardrails and responsible AI governance', 'GenAI MVP use-case design and delivery']
+    }
+  }
+};
+
+function showLayer(layer) {
+  const d = archData[layer]?._layer;
+  if (!d) return;
+  renderDetail(d);
+}
+
+function showBox(layer, box) {
+  document.querySelectorAll('.arch-box').forEach(b => b.classList.remove('selected'));
+  event.target.classList.add('selected');
+  const d = archData[layer]?.[box] || archData[layer]?._layer;
+  if (d) renderDetail(d);
+}
+
+function renderDetail(d) {
+  const p = document.getElementById('detailPanel');
+  p.innerHTML = `
+    <h3>${d.title}</h3>
+    <div class="detail-section">
+      <h4>What It Is</h4>
+      <p>${d.what}</p>
+    </div>
+    ${d.why ? `<div class="detail-section"><h4>Why It Matters for LPL</h4><p>${d.why}</p></div>` : ''}
+    ${d.capabilities ? `<div class="detail-section"><h4>Key Capabilities</h4><ul>${d.capabilities.map(c=>`<li>${c}</li>`).join('')}</ul></div>` : ''}
+    ${d.questions ? `<div class="detail-section"><h4>Discovery Questions</h4><ul>${d.questions.map(q=>`<li>${q}</li>`).join('')}</ul></div>` : ''}
+    ${d.wipro ? `<div class="detail-section"><h4>Wipro Role &amp; Accelerators</h4><div class="wipro-tag"><ul>${d.wipro.map(w=>`<li>${w}</li>`).join('')}</ul></div></div>` : ''}
+  `;
+}
+
+// ---- WORKFLOW TABLE ----
+const workflows = [
+  { name:'Advisor Onboarding', owner:'Advisor Ops', app:'Advisor Portal', domains:'Advisor, Account, CRM', dep:'Commonwealth ETL', target:'Advisor 360 API', sla:'D+1', complexity:'High', risk:'High', wave:'Wave 1', date:'Aug 2026', status:'Planning' },
+  { name:'Client Account Opening', owner:'Client Ops', app:'Account Mgmt Platform', domains:'Client, Account, KYC', dep:'Commonwealth DB', target:'Client 360 API', sla:'D+0', complexity:'High', risk:'High', wave:'Wave 1', date:'Aug 2026', status:'Planning' },
+  { name:'Household Management', owner:'Data Mgmt', app:'CRM / Analytics', domains:'Household, Client, Account', dep:'Commonwealth MDM', target:'Account & HH Product', sla:'D+1', complexity:'Medium', risk:'Medium', wave:'Wave 1', date:'Sep 2026', status:'Planning' },
+  { name:'Portfolio Reporting', owner:'Investment Ops', app:'Reporting Suite', domains:'Holdings, Performance', dep:'Commonwealth DW', target:'Holdings Product API', sla:'D+1', complexity:'High', risk:'High', wave:'Wave 2', date:'Oct 2026', status:'Planned' },
+  { name:'Transactions Reporting', owner:'Finance Ops', app:'Finance Dashboard', domains:'Transactions, Account', dep:'Commonwealth ETL', target:'Holdings & Txn Product', sla:'D+1', complexity:'Medium', risk:'Medium', wave:'Wave 2', date:'Oct 2026', status:'Planned' },
+  { name:'Holdings Reporting', owner:'Investment Ops', app:'Advisor Dashboard', domains:'Holdings, Positions', dep:'Commonwealth DW', target:'Holdings Product', sla:'D+1', complexity:'Medium', risk:'Medium', wave:'Wave 2', date:'Oct 2026', status:'Planned' },
+  { name:'Fee Billing', owner:'Finance', app:'Billing Engine', domains:'Fees, Account, AUM', dep:'Commonwealth Billing DB', target:'Fees & Billing Product', sla:'Monthly', complexity:'High', risk:'High', wave:'Wave 2', date:'Oct 2026', status:'Planned' },
+  { name:'Compliance Surveillance', owner:'Compliance', app:'Surveillance Platform', domains:'Transactions, Advisor', dep:'Commonwealth Reports', target:'Risk & Compliance Product', sla:'D+1', complexity:'High', risk:'High', wave:'Wave 1', date:'Sep 2026', status:'Planning' },
+  { name:'Risk Reporting', owner:'Risk Mgmt', app:'Risk Dashboard', domains:'Exposures, Positions', dep:'Commonwealth DW', target:'Risk & Compliance Product', sla:'D+1', complexity:'Medium', risk:'Medium', wave:'Wave 2', date:'Oct 2026', status:'Planned' },
+  { name:'Advisor Compensation', owner:'HR / Finance', app:'Compensation Engine', domains:'Revenue, Advisor, AUM', dep:'Commonwealth ETL', target:'Advisor 360 Product', sla:'Monthly', complexity:'High', risk:'High', wave:'Wave 3', date:'Nov 2026', status:'Planned' },
+  { name:'Client Servicing', owner:'Client Ops', app:'Service Portal', domains:'Client, Account, Interactions', dep:'CRM + Commonwealth', target:'Client 360 API', sla:'Real-time', complexity:'Medium', risk:'Medium', wave:'Wave 3', date:'Nov 2026', status:'Planned' },
+  { name:'Document Processing', owner:'Ops', app:'Doc Mgmt Platform', domains:'Documents, Client', dep:'Commonwealth FileShare', target:'Doc Intelligence API', sla:'D+1', complexity:'Medium', risk:'Low', wave:'Wave 3', date:'Nov 2026', status:'Planned' },
+  { name:'Operational Exception Mgmt', owner:'Ops', app:'Exception Dashboard', domains:'Transactions, Workflow', dep:'Commonwealth Reports', target:'Ops Workflow Product', sla:'Real-time', complexity:'Medium', risk:'Medium', wave:'Wave 2', date:'Oct 2026', status:'Planned' },
+  { name:'Regulatory Reporting', owner:'Compliance', app:'Reg Reporting Suite', domains:'Account, Transactions, Client', dep:'Commonwealth DW', target:'Risk & Compliance Product', sla:'Regulatory SLA', complexity:'High', risk:'High', wave:'Wave 1', date:'Sep 2026', status:'Planning' },
+  { name:'Executive Analytics', owner:'Strategy / Finance', app:'Executive Dashboard', domains:'AUM, Revenue, Growth', dep:'Commonwealth DW', target:'Semantic Layer / BI', sla:'D+1', complexity:'Medium', risk:'Low', wave:'Wave 3', date:'Nov 2026', status:'Planned' }
+];
+
+function riskBadge(r) {
+  if (r==='High') return '<span class="badge badge-high">High</span>';
+  if (r==='Medium') return '<span class="badge badge-med">Medium</span>';
+  return '<span class="badge badge-low">Low</span>';
+}
+function waveBadge(w) {
+  if (w==='Wave 1') return '<span class="badge badge-wave1">Wave 1</span>';
+  if (w==='Wave 2') return '<span class="badge badge-wave2">Wave 2</span>';
+  return '<span class="badge badge-wave3">Wave 3</span>';
+}
+function statusBadge(s) {
+  if (s==='Planning') return '<span class="badge badge-plan">Planning</span>';
+  return '<span class="badge badge-wave2">Planned</span>';
+}
+
+const tbody = document.getElementById('workflowTableBody');
+workflows.forEach((w,i) => {
+  tbody.innerHTML += `<tr>
+    <td>${i+1}</td>
+    <td><strong>${w.name}</strong></td>
+    <td>${w.owner}</td>
+    <td>${w.app}</td>
+    <td style="font-size:11px;color:var(--gray-mid)">${w.domains}</td>
+    <td style="font-size:11px;color:var(--gray-mid)">${w.dep}</td>
+    <td style="font-size:11px;">${w.target}</td>
+    <td>${w.sla}</td>
+    <td>${riskBadge(w.complexity)}</td>
+    <td>${riskBadge(w.risk)}</td>
+    <td>${waveBadge(w.wave)}</td>
+    <td>${w.date}</td>
+    <td>${statusBadge(w.status)}</td>
+  </tr>`;
+});
+
+// ---- DISCOVERY QUESTIONS ----
+const dqData = [
+  { cat: 'Business & Program Goals', qs: ['What are the top business outcomes expected from the enterprise data foundation?', 'What does success look like by MVP, by Phase 1, and by November 2026?', 'Which workflows are most critical to Commonwealth integration?', 'Where is the program currently facing execution challenges?', 'How is the program tracking against its original plan?'] },
+  { cat: 'Platform & Architecture', qs: ['What is the target platform architecture?', 'What technologies are already selected (cloud, storage, orchestration, governance)?', 'What parts are already built versus still in design?', 'How are data ingestion, transformation, governance, and consumption handled today?', 'What is the current state of the data foundation build?'] },
+  { cat: '15 Workflow Migration', qs: ['What are the 15 workflows and which applications consume them?', 'What are the current data source dependencies for each workflow?', 'Which workflows are highest risk or most complex?', 'What is the target onboarding sequence and wave plan?', 'What is the expected cutover model (hard cutover vs parallel run)?'] },
+  { cat: 'Data Quality & Reconciliation', qs: ['What data quality issues are known today?', 'What reconciliation is required before business sign-off?', 'Which reports or workflows must match exactly between old and new systems?', 'Who owns data quality exceptions — engineering or business?', 'What tolerance levels exist for reconciliation differences?'] },
+  { cat: 'AI Readiness', qs: ['What AI use cases are planned on top of the data foundation?', 'Are AI priorities advisor-facing, operations-facing, risk/compliance, or enterprise?', 'What unstructured data sources should be included?', 'What controls are required before AI goes into production?', 'Is a vector database or RAG infrastructure already being planned?'] },
+  { cat: 'Governance & Operating Model', qs: ['Who owns data domains and data products?', 'What governance tools are used today?', 'How are access, privacy, lineage, and data quality managed?', 'What operating model is planned after the platform goes live?', 'Are data stewards and business owners already assigned per domain?'] }
+];
+
+const dqGrid = document.getElementById('dqGrid');
+dqData.forEach(cat => {
+  dqGrid.innerHTML += `<div class="dq-card"><h4>${cat.cat}</h4><ul>${cat.qs.map(q=>`<li>${q}</li>`).join('')}</ul></div>`;
+});
+
+function copyAllQuestions() {
+  let text = 'LPL / Commonwealth — Discovery Questions\n\n';
+  dqData.forEach(cat => {
+    text += cat.cat + '\n';
+    cat.qs.forEach((q,i) => { text += `  ${i+1}. ${q}\n`; });
+    text += '\n';
+  });
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = event.target;
+    btn.textContent = 'Copied!';
+    setTimeout(()=>{ btn.textContent = 'Copy All Questions to Clipboard'; }, 2000);
+  });
+}
+
+// Close modal on overlay click
+document.getElementById('ctaModal').addEventListener('click', function(e) {
+  if (e.target === this) this.classList.remove('open');
+});
+</script>
+</body>
+</html>
