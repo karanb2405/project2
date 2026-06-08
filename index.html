@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LPL Enterprise Data Foundation & AI-Ready Platform | Wipro</title>
+<title>Enterprise Data Foundation & AI-Ready Platform | Wipro</title>
 <style>
   :root {
     --blue-dark: #0a2342;
@@ -150,6 +150,19 @@
   .copy-btn { background: var(--blue-dark); color: white; border: none; border-radius: 6px; padding: 10px 20px; font-size: 12px; cursor: pointer; margin-bottom: 16px; transition: background 0.2s; }
   .copy-btn:hover { background: var(--blue-mid); }
 
+  /* DISCOVERY QUESTIONS — two-part layout */
+  .dq-part-wrap { border-radius: 10px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+  .dq-part-header { padding: 16px 22px; display: flex; align-items: center; gap: 14px; }
+  .dq-part-header .dq-part-icon { font-size: 26px; flex-shrink: 0; }
+  .dq-part-header .dq-part-text { flex: 1; }
+  .dq-part-header h3 { font-size: 14px; font-weight: 700; color: white; margin-bottom: 3px; }
+  .dq-part-header p { font-size: 11.5px; color: rgba(200,220,248,0.85); line-height: 1.4; }
+  .dq-part-badge { background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 3px 11px; font-size: 10px; font-weight: 700; color: white; white-space: nowrap; flex-shrink: 0; }
+  .dq-part-copy { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white; border-radius: 6px; padding: 7px 14px; font-size: 11px; font-weight: 600; cursor: pointer; flex-shrink: 0; transition: background 0.2s; white-space: nowrap; }
+  .dq-part-copy:hover { background: rgba(255,255,255,0.25); }
+  .dq-part-body { background: var(--gray-light); padding: 16px; }
+  .dq-part-body .dq-grid { margin-bottom: 0; }
+
   /* WIPRO APPROACH */
   .phases-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
   .phase-card { background: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); position: relative; }
@@ -268,6 +281,11 @@
   .ra-zone-foundation .ra-zone-header { color: #0a2342; }
   .ra-zone-foundation .ra-chip { background: white; border-color: #a0b8d0; color: #0a2342; }
 
+  .ra-zone-semantic { background: linear-gradient(135deg,#0d4058,#0d5c72); }
+  .ra-zone-semantic .ra-zone-header { color: #7de8f8; }
+  .ra-zone-semantic .ra-chip { background: rgba(255,255,255,0.11); border-color: rgba(255,255,255,0.24); color: #c0f0f8; }
+  .ra-semantic-note { font-size: 10px; color: rgba(255,255,255,0.55); font-style: italic; margin-top: 6px; padding: 4px 8px; border: 1px dashed rgba(255,255,255,0.25); border-radius: 4px; line-height: 1.4; }
+
   /* BOTTOM BAND: Platform */
   .ra-plat-band { background: linear-gradient(90deg,#1a1a3a,#2a2a5c); padding: 9px 16px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
   .ra-plat-label { font-size: 10px; font-weight: 700; color: #a0b8e8; text-transform: uppercase; letter-spacing: 0.7px; white-space: nowrap; }
@@ -315,7 +333,7 @@
 <div class="header">
   <div class="header-top">
     <div>
-      <h1>LPL Enterprise Data Foundation &amp; <span>AI-Ready Platform</span></h1>
+      <h1>Enterprise Data Foundation &amp; <span>AI-Ready Platform</span></h1>
       <div class="header-sub">Client Discovery Meeting | Wipro Consulting | Prepared June 2026</div>
     </div>
     <div class="wipro-badge">
@@ -324,7 +342,7 @@
     </div>
   </div>
   <div class="positioning">
-    "Wipro can help LPL establish a migration factory that de-risks the onboarding of 15 consumer workflows while building an AI-ready enterprise data foundation for trusted analytics, GenAI, and future agentic AI."
+    "Wipro can help establish a migration factory that de-risks the onboarding of consumer workflows while building an AI-ready enterprise data foundation for trusted analytics, GenAI, and future agentic AI."
   </div>
 </div>
 
@@ -649,9 +667,43 @@
 
   <!-- DISCOVERY QUESTIONS TAB -->
   <div class="tab-content" id="tab-dq">
-    <div class="section-title">Questions for LPL / Commonwealth — First Meeting</div>
-    <button class="copy-btn" onclick="copyAllQuestions()">Copy All Questions to Clipboard</button>
-    <div class="dq-grid" id="dqGrid"></div>
+    <div class="section-title">Discovery Questions for LPL / Commonwealth — First Meeting</div>
+
+    <!-- PART 1 -->
+    <div class="dq-part-wrap">
+      <div class="dq-part-header" style="background:linear-gradient(135deg,#0a2342,#1a4a7a);">
+        <div class="dq-part-icon">🏗️</div>
+        <div class="dq-part-text">
+          <h3>Part 1 — Data Foundation &amp; Migration</h3>
+          <p>Business goals · Platform architecture · 15 workflow migration · Data quality &amp; reconciliation · Governance &amp; operating model</p>
+        </div>
+        <span class="dq-part-badge">5 Categories</span>
+        <button class="dq-part-copy" onclick="copyQuestions(1, event)">Copy Part 1</button>
+      </div>
+      <div class="dq-part-body">
+        <div class="dq-grid" id="dqGrid1"></div>
+      </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div class="dq-part-wrap">
+      <div class="dq-part-header" style="background:linear-gradient(135deg,#0d4058,#1a2d7a);">
+        <div class="dq-part-icon">📐</div>
+        <div class="dq-part-text">
+          <h3>Part 2 — Semantic Layer, Data Products &amp; Data Marketplace</h3>
+          <p>Metric ownership · Data product strategy · Catalog &amp; discovery · Marketplace &amp; consumption · AI readiness</p>
+        </div>
+        <span class="dq-part-badge">5 Categories</span>
+        <button class="dq-part-copy" onclick="copyQuestions(2, event)">Copy Part 2</button>
+      </div>
+      <div class="dq-part-body">
+        <div class="dq-grid" id="dqGrid2"></div>
+      </div>
+    </div>
+
+    <div style="text-align:right;margin-top:-8px;">
+      <button class="copy-btn" style="margin-bottom:0;" onclick="copyAllQuestions()">Copy All Questions to Clipboard</button>
+    </div>
   </div>
 
   <!-- WIPRO APPROACH TAB -->
@@ -764,18 +816,11 @@
     <!-- Page Header -->
     <div class="ra-page-header">
       <div>
-        <div class="ra-eyebrow">Wipro DAAI &nbsp;·&nbsp; Capital Markets Practice &nbsp;·&nbsp; Reference Architecture</div>
-        <h2 class="ra-page-title">Data &amp; AI-Powered Capital Markets Enterprise Landscape</h2>
+        <div class="ra-eyebrow">Reference Architecture</div>
+        <h2 class="ra-page-title">Data &amp; AI-Powered Enterprise Landscape</h2>
         <div class="ra-subtitle">A blueprint for building a governed, AI-ready operating layer — from fragmented data to trusted insights and intelligent workflows</div>
       </div>
-      <div class="ra-buyers-row">
-        <span class="ra-buyer-tag">CDO / CDAO</span>
-        <span class="ra-buyer-tag">CIO</span>
-        <span class="ra-buyer-tag">COO</span>
-        <span class="ra-buyer-tag">Head of Operations</span>
-        <span class="ra-buyer-tag">CRO</span>
-        <span class="ra-buyer-tag">Compliance</span>
-      </div>
+
     </div>
 
     <!-- THREE-COLUMN: left labels | center 2D diagram | right principles -->
@@ -788,6 +833,7 @@
         <div class="ra-cap-pill" style="background:#0a3470;color:white;">Data-Powered Applications</div>
         <div class="ra-cap-pill" style="background:#3d0d70;color:white;">AI &amp; Agent Engineering</div>
         <div class="ra-cap-pill" style="background:#1a2d7a;color:white;">Data Products Engineering</div>
+        <div class="ra-cap-pill" style="background:#0d4058;color:white;">Semantic Layer</div>
         <div class="ra-cap-pill" style="background:#0d5a46;color:white;">Data Trust</div>
         <div class="ra-cap-pill" style="background:#0d2e50;color:white;">Data Foundation</div>
         <div class="ra-cap-pill" style="background:#1a2535;color:#8fb3d4;">Platform Foundation</div>
@@ -868,7 +914,7 @@
             <div class="ra-zone ra-zone-apps">
               <div class="ra-zone-header">
                 <span class="ra-zone-icon">⚡</span>
-                <span>Data-Powered Applications &nbsp;—&nbsp; Capital Markets Intelligence</span>
+                <span>Data-Powered Applications &nbsp;—&nbsp; Intelligence</span>
               </div>
               <div class="ra-zone-chips">
                 <div class="ra-chip">Settlement Break Resolution Agent</div>
@@ -905,7 +951,7 @@
             <div class="ra-zone ra-zone-products">
               <div class="ra-zone-header">
                 <span class="ra-zone-icon">🗂️</span>
-                <span>Data Products Engineering &nbsp;—&nbsp; Capital Markets Domain Products</span>
+                <span>Data Products Engineering &nbsp;—&nbsp; Data Domain Products</span>
               </div>
               <div class="ra-zone-chips">
                 <div class="ra-chip">Trade Data Product</div>
@@ -916,6 +962,28 @@
                 <div class="ra-chip">Risk Data Product</div>
                 <div class="ra-chip">Regulatory Reporting Product</div>
                 <div class="ra-chip">Client / Advisor Data Product</div>
+              </div>
+            </div>
+            <div class="ra-flow-arrow">▲ &nbsp;Expose via Semantic Layer&nbsp; ▲</div>
+
+            <!-- SEMANTIC LAYER -->
+            <div class="ra-zone ra-zone-semantic">
+              <div class="ra-zone-header">
+                <span class="ra-zone-icon">📐</span>
+                <span>Semantic Layer &nbsp;—&nbsp; Trusted Meaning for Data, AI &amp; Analytics</span>
+              </div>
+              <div class="ra-zone-chips">
+                <div class="ra-chip">Business Glossary</div>
+                <div class="ra-chip">Certified Metrics</div>
+                <div class="ra-chip">KPI Definitions</div>
+                <div class="ra-chip">Approved Joins &amp; Hierarchies</div>
+                <div class="ra-chip">Entitlement-Aware Query</div>
+                <div class="ra-chip">Reusable Query Logic</div>
+                <div class="ra-chip">AI-Safe Context</div>
+                <div class="ra-chip">Business Rules</div>
+              </div>
+              <div class="ra-semantic-note">
+                ⬡ &nbsp;Design choice: Semantic layer can be built directly on Data Foundation (early maturity) <strong>or</strong> on top of certified Data Products (target maturity). Both patterns are valid.
               </div>
             </div>
             <div class="ra-flow-arrow">▲ &nbsp;Build on Trusted Foundation&nbsp; ▲</div>
@@ -935,6 +1003,7 @@
                 <div class="ra-chip">MDM</div>
                 <div class="ra-chip">Metadata Store</div>
                 <div class="ra-chip">Reference Data</div>
+                <div class="ra-chip">Data Mart</div>
               </div>
             </div>
 
@@ -1261,31 +1330,186 @@ workflows.forEach((w,i) => {
 });
 
 // ---- DISCOVERY QUESTIONS ----
-const dqData = [
-  { cat: 'Business & Program Goals', qs: ['What are the top business outcomes expected from the enterprise data foundation?', 'What does success look like by MVP, by Phase 1, and by November 2026?', 'Which workflows are most critical to Commonwealth integration?', 'Where is the program currently facing execution challenges?', 'How is the program tracking against its original plan?'] },
-  { cat: 'Platform & Architecture', qs: ['What is the target platform architecture?', 'What technologies are already selected (cloud, storage, orchestration, governance)?', 'What parts are already built versus still in design?', 'How are data ingestion, transformation, governance, and consumption handled today?', 'What is the current state of the data foundation build?'] },
-  { cat: '15 Workflow Migration', qs: ['What are the 15 workflows and which applications consume them?', 'What are the current data source dependencies for each workflow?', 'Which workflows are highest risk or most complex?', 'What is the target onboarding sequence and wave plan?', 'What is the expected cutover model (hard cutover vs parallel run)?'] },
-  { cat: 'Data Quality & Reconciliation', qs: ['What data quality issues are known today?', 'What reconciliation is required before business sign-off?', 'Which reports or workflows must match exactly between old and new systems?', 'Who owns data quality exceptions — engineering or business?', 'What tolerance levels exist for reconciliation differences?'] },
-  { cat: 'AI Readiness', qs: ['What AI use cases are planned on top of the data foundation?', 'Are AI priorities advisor-facing, operations-facing, risk/compliance, or enterprise?', 'What unstructured data sources should be included?', 'What controls are required before AI goes into production?', 'Is a vector database or RAG infrastructure already being planned?'] },
-  { cat: 'Governance & Operating Model', qs: ['Who owns data domains and data products?', 'What governance tools are used today?', 'How are access, privacy, lineage, and data quality managed?', 'What operating model is planned after the platform goes live?', 'Are data stewards and business owners already assigned per domain?'] }
+
+// PART 1: Data Foundation & Migration
+const dqData1 = [
+  {
+    cat: 'Business & Program Goals',
+    qs: [
+      'What are the top business outcomes expected from the enterprise data foundation?',
+      'What does success look like by MVP, by Phase 1, and by November 2026?',
+      'Which workflows are most critical to the Commonwealth integration?',
+      'Where is the program currently facing the most execution risk or delay?',
+      'How is program delivery tracked — and who has visibility across workstreams?',
+      'What would a failed migration look like, and how are those scenarios being mitigated?'
+    ]
+  },
+  {
+    cat: 'Platform & Architecture',
+    qs: [
+      'What is the target platform architecture — cloud, storage, compute, and orchestration layers?',
+      'Which technologies are already selected versus still under evaluation?',
+      'What parts of the data foundation are already built versus still in design or procurement?',
+      'How is data ingestion, transformation, governance, and consumption handled today?',
+      'Are there existing data pipelines, curated datasets, or data marts that Wipro should build upon?',
+      'What are the integration patterns today — batch files, APIs, CDC, or event streams?'
+    ]
+  },
+  {
+    cat: '15 Workflow Migration',
+    qs: [
+      'What are the 15 workflows by name, and which application or team owns each?',
+      'What data sources, APIs, reports, and extracts does each workflow depend on today?',
+      'Which workflows are highest risk due to complexity, volume, or regulatory dependency?',
+      'What is the planned migration sequence and wave structure?',
+      'What is the expected cutover model — hard cutover, parallel run, or phased transition?',
+      'Which workflows are required for the November 2026 milestone, and which can follow?',
+      'Are there any workflows with hard external dependencies (regulators, counterparties, custodians)?'
+    ]
+  },
+  {
+    cat: 'Data Quality & Reconciliation',
+    qs: [
+      'What data quality issues are known today at source, in transit, or in existing reports?',
+      'What reconciliation is required before a business owner will sign off on migration?',
+      'Which reports or outputs must match exactly between the legacy and new system?',
+      'Who owns data quality exceptions today — is it engineering, operations, or the business?',
+      'What tolerance thresholds exist for reconciliation differences (exact match vs percentage)?',
+      'Are there automated data quality checks in place today, or is reconciliation manual?',
+      'What happens when data quality fails — who gets notified and what is the escalation path?'
+    ]
+  },
+  {
+    cat: 'Governance & Operating Model',
+    qs: [
+      'Who owns each data domain today — client, account, advisor, holdings, transactions, fees, risk?',
+      'What governance tools are in use (Collibra, Alation, Purview, Unity Catalog)?',
+      'How are access controls, privacy classifications, and data entitlements managed today?',
+      'How is lineage tracked from source systems to reports and consuming applications?',
+      'What operating model is planned after the platform goes live — centralized, federated, or hybrid?',
+      'Are data stewards and business data owners formally assigned per domain?',
+      'What regulatory or audit requirements govern how data must be managed and documented?'
+    ]
+  }
 ];
 
-const dqGrid = document.getElementById('dqGrid');
-dqData.forEach(cat => {
-  dqGrid.innerHTML += `<div class="dq-card"><h4>${cat.cat}</h4><ul>${cat.qs.map(q=>`<li>${q}</li>`).join('')}</ul></div>`;
+// PART 2: Semantic Layer, Data Products & Data Marketplace
+const dqData2 = [
+  {
+    cat: 'Semantic Layer & Metric Definitions',
+    qs: [
+      'Does your organization have a certified business glossary, KPI catalog, or metric registry today?',
+      'Which business metrics are most frequently disputed or inconsistently calculated across teams — AUM, NNA, revenue, exposure, active accounts, client profitability?',
+      'Who is accountable for defining and certifying metrics — the business, data engineering, or a shared team?',
+      'Are BI tools currently querying raw source tables, curated datasets, or a governed semantic layer?',
+      'Should the semantic layer serve BI tools, operational APIs, and AI agents from a single model?',
+      'What is the target architecture — semantic layer on curated data (early maturity) or on certified data products (target state)?',
+      'Are metric definitions for LPL and Commonwealth currently aligned or diverged, and what is the plan to harmonize?',
+      'Which metric inconsistencies pose the highest regulatory or business risk if left unresolved?'
+    ]
+  },
+  {
+    cat: 'Data Products Strategy & Ownership',
+    qs: [
+      'Does your organization have a formal data product strategy or a data-as-a-product operating model today?',
+      'Which data domains are the highest priority — client, advisor, holdings, trade, settlement, fees, risk, or compliance?',
+      'Who owns data quality, SLAs, and documentation for each domain today — engineering or the business?',
+      'Are multiple teams currently building separate integrations to the same source data?',
+      'What does a "trusted" data product look like in your organization — what attributes are required (owner, SLA, quality score, lineage, access rules)?',
+      'Which data products are MVP-critical for the 15 workflow migrations?',
+      'Are there existing curated datasets or certified extracts that should be formalized into data products?',
+      'How should data product ownership be structured post-migration — domain teams, platform team, or hybrid?'
+    ]
+  },
+  {
+    cat: 'Data Catalog & Discovery',
+    qs: [
+      'Do you have a data catalog today, and which tool is in use (Collibra, Alation, Azure Purview, Databricks Unity Catalog)?',
+      'How do analysts, engineers, and application teams currently discover what data is available?',
+      'Is business metadata captured today — owner, SLA, quality score, lineage, field descriptions, sample queries?',
+      'Are data dictionaries and business definitions maintained and kept current, or are they stale?',
+      'Should the catalog be integrated with the data marketplace for access requests and consumption tracking?',
+      'What level of lineage is required — column-level, table-level, job-level, or end-to-end from source to report?',
+      'Who is responsible for keeping catalog entries accurate after a data product is published?'
+    ]
+  },
+  {
+    cat: 'Data Marketplace & Consumption',
+    qs: [
+      'Does your organization have a data marketplace or self-service data access platform today?',
+      'How are data access requests currently handled — manual approval, ticketing system, or automated entitlement?',
+      'What consumption patterns must the marketplace support — SQL, API, BI tool connection, file export, AI context feed?',
+      'Should the marketplace track usage metrics, quality scores, SLA performance, and consumer feedback per data product?',
+      'What entitlement and access control model is required — role-based, attribute-based, data domain ownership, or a combination?',
+      'Is cross-LOB or cross-division data sharing a business goal, and what governance controls are needed?',
+      'Should external parties (regulators, auditors, custodians, partners) have governed access through the marketplace?',
+      'What is the target experience for a business analyst — how should they find, request, and consume a certified data product?'
+    ]
+  },
+  {
+    cat: 'AI Readiness & Data Products for AI',
+    qs: [
+      'Which AI use cases are planned after the data foundation, and what data products do they require?',
+      'Are AI priorities advisor-facing, operations-facing, risk and compliance, or enterprise productivity?',
+      'What unstructured data — documents, advisor notes, statements, contracts, policies — needs to be included in AI-ready data products?',
+      'Should AI agents consume certified data products via API, semantic layer queries, or RAG index — or all three patterns?',
+      'What quality and governance controls must a data product meet before it can be used as context for a GenAI application?',
+      'Is an AI-safe semantic layer needed — with guardrails preventing agents from accessing sensitive or restricted attributes?',
+      'Who approves data product AI-readiness before a GenAI or agentic AI use case goes into production?',
+      'What AI observability and audit trail requirements exist for tracing AI responses back to source data and business rules?'
+    ]
+  }
+];
+
+// Render Part 1
+const dqGrid1 = document.getElementById('dqGrid1');
+dqData1.forEach(cat => {
+  dqGrid1.innerHTML += `<div class="dq-card"><h4>${cat.cat}</h4><ul>${cat.qs.map(q=>`<li>${q}</li>`).join('')}</ul></div>`;
 });
+
+// Render Part 2
+const dqGrid2 = document.getElementById('dqGrid2');
+dqData2.forEach(cat => {
+  dqGrid2.innerHTML += `<div class="dq-card"><h4>${cat.cat}</h4><ul>${cat.qs.map(q=>`<li>${q}</li>`).join('')}</ul></div>`;
+});
+
+function copyQuestions(part, evt) {
+  const data = part === 1 ? dqData1 : dqData2;
+  const label = part === 1
+    ? 'Part 1: Data Foundation & Migration'
+    : 'Part 2: Semantic Layer, Data Products & Data Marketplace';
+  let text = `LPL / Commonwealth — Discovery Questions\n${label}\n${'='.repeat(50)}\n\n`;
+  data.forEach(cat => {
+    text += cat.cat + '\n';
+    cat.qs.forEach((q, i) => { text += `  ${i+1}. ${q}\n`; });
+    text += '\n';
+  });
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = evt.target;
+    const orig = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(() => { btn.textContent = orig; }, 2000);
+  });
+}
 
 function copyAllQuestions() {
   let text = 'LPL / Commonwealth — Discovery Questions\n\n';
-  dqData.forEach(cat => {
+  text += 'PART 1: Data Foundation & Migration\n' + '='.repeat(50) + '\n\n';
+  dqData1.forEach(cat => {
     text += cat.cat + '\n';
-    cat.qs.forEach((q,i) => { text += `  ${i+1}. ${q}\n`; });
+    cat.qs.forEach((q, i) => { text += `  ${i+1}. ${q}\n`; });
+    text += '\n';
+  });
+  text += 'PART 2: Semantic Layer, Data Products & Data Marketplace\n' + '='.repeat(50) + '\n\n';
+  dqData2.forEach(cat => {
+    text += cat.cat + '\n';
+    cat.qs.forEach((q, i) => { text += `  ${i+1}. ${q}\n`; });
     text += '\n';
   });
   navigator.clipboard.writeText(text).then(() => {
     const btn = event.target;
     btn.textContent = 'Copied!';
-    setTimeout(()=>{ btn.textContent = 'Copy All Questions to Clipboard'; }, 2000);
+    setTimeout(() => { btn.textContent = 'Copy All Questions to Clipboard'; }, 2000);
   });
 }
 
